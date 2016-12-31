@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<div class="ui text container">
+  <h1 class="ui yellow header">{{ page.title }}
+    <div class="sub header">{{ page.date | date_to_string }}</div>
+  </h1>
+
+  <div>
+    {{ content }}
+  </div>
+</div>
