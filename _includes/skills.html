@@ -1,8 +1,18 @@
-<h3>Languages</h3>
-{% include languages.html %}
-<h3>Technologies</h3>
-{% include technologies.html %}
-<h3>Toolsets & Frameworks</h3>
-{% include frameworks.html %}
-<h3>Applications</h3>
-{% include applications.html %}
+<div class="ui stackable grid">
+  <div class="three wide column">
+    {% include languages.html %}
+  </div>
+  <div class="four wide column">
+    {% include technologies.html %}
+  </div>
+  <div class="five wide column">
+    {% include frameworks.html %}
+  </div>
+  <div class="four wide column">
+    {% include applications.html %}
+  </div>
+</div>
+
+<script>
+    $('.ui.dropdown').dropdown();
+</script>
