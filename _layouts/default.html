@@ -11,27 +11,10 @@
 			<link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
 		</head>
 		<body>
-			<div class="ui massive borderless menu">
-				<div class="ui container">
-		  		<a class="header item" href="/">Brian Bagdasarian</a>
-		  		<a class="item" href="/cv">CV</a>
-		  		<a class="item" href="/blog">Projects</a>
-				</div>
-			</div>
+			{% include header.html %}
 			<div id="content">
-
-			{{ content }}
-
+				{{ content }}
 			</div>
-
-			<div class="ui vertical footer segment">
-				<div class="ui divider"></div>
-	    	<div class="ui center aligned container">
-					<div class="ui horizontal small divided link list">
-      			<a class="item" href="mailto:bbagdasarian.scs@gmail.com">Email</a>
-      			<a class="item" href="https://github.com/ahappypie">github.com/ahappypie</a>
-					</div>
-				</div>
-			</div>
+			{% include footer.html %}
 		</body>
 	</html>
