@@ -19,7 +19,7 @@ Including the AWS [outage](https://aws.amazon.com/message/41926/) on February 28
 Activity for the period totaled **1318** original messages, or about **94 messages/day**. Retweets were ignored for clarity.
 
 Individual message sentiment breaks down as follows:
-<img class="ui image" src="/images/projects/sentimentdemo/sentiment_bar.png">
+<img class="ui image" src="/images/projects/sentimentdemo/sentiment-bar.png">
 While this may initially seem alarming, drilling into the text of each messages shows that the algorithm used to score each message has some consistent limitations. Notably, nearly 5% of negatively classified messages were people inquiring about sponsorships, which is more likely a sign of positive engagement than negative engagement. There are several more examples of misclassification among both negatively and neutrally classified messages simply because of the limitations of the model, which I will discuss in a moment.
 
 First, however, I would like to highlight instances where the model did classify messages properly.
