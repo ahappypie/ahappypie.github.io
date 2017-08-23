@@ -14,7 +14,7 @@ date: 2017-3-14
 During some conversations surrounding potential data-gathering expansions for [FIJI Water](https://www.fijiwater.com/), I mentioned that it would be possible to join social media data to other on-premise information \(like sales data\), to get a more comprehensive view of the business. I put together a small demonstration of a sentiment analysis pipeline using Twitter's [Streaming API](https://dev.twitter.com/streaming/public) and Stanford's [CoreNLP](http://stanfordnlp.github.io/CoreNLP/) natural language processing library. The source code is available at [GitHub](https://github.com/ahappypie/twitter-stream-demo).
 
 <h2 class="ui header">Insights</h2>
-Including the AWS [outage](https://aws.amazon.com/message/41926/) on February 28th, the insights from the pipeline total 14 days worth of tweets mentioning the following keywords: *fijiwater*, *fiji water*, *FIJIWater*, *FijiWater*, *FIJI Water*, *Fiji Water*. Twitter provides a good explanation of how to use the tracking system [here](https://dev.twitter.com/streaming/overview/request-parameters#track).
+Including the [AWS outage](https://aws.amazon.com/message/41926/) on February 28th, the insights from the pipeline total 14 days worth of tweets mentioning the following keywords: *fijiwater*, *fiji water*, *FIJIWater*, *FijiWater*, *FIJI Water*, *Fiji Water*. Twitter provides a good explanation of how to use the tracking system [here](https://dev.twitter.com/streaming/overview/request-parameters#track).
 
 Activity for the period totaled **1318** original messages, or about **94 messages/day**. Retweets were ignored for clarity.
 
