@@ -31,6 +31,7 @@ As I look forward to starting my hybrid role at [FIJI Water](https://fijiwater.c
           <div class="item"><a href="https://atom.io/">Atom</a> - for text.</div>
           <div class="item"><a href="https://www.jetbrains.com/toolbox/">WebStorm</a> - for JS.</div>
           <div class="item"><a href="https://www.jetbrains.com/toolbox/">IntelliJ</a> - for Scala.</div>
+          <div class="item"><a style="text-decoration:line-through" href="https://polymail.io">Polymail</a> <a href="https://www.nylas.com/nylas-mail/">Nylas</a> - for email (Update: Polymail is no longer compatible with OS X 10.10 and below)</div>
         </div>
       </div>
     </div>
