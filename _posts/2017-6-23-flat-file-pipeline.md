@@ -3,6 +3,11 @@ layout: post
 title: "The FIJI Water Flat File ETL Pipeline"
 date: 2017-6-23
 ---
+<div>
+  <img class="ui avatar image" src="/images/avatars/azure.png">
+  <img class="ui avatar image" src="/images/avatars/powerbi.png">
+</div>
+<br>
 <strong><span style="color:red;">Update 13 July 2017: </span>There is a <a href="https://ideas.powerbi.com/forums/265200-power-bi-ideas/suggestions/10172688-sql-azure-connector-with-azure-ad-auth">known bug</a> with Active Directory authentication, Azure SQL Database and Power BI Desktop. This is a significant issue that has delayed the push of this project to production. Hopefully Microsoft will resolve this issue in a timely manner.</strong>
 <h2 class="ui header">Background</h2>
 Over the last few weeks I've been working to understand the needs of the teams my department supports here at [FIJI Water](https://fijiwater.com), and it has become relatively obvious that the lack of authoritative data is a major blocker to multiple business processes. All of our data is stored, accessed and analyzed in Excel, which has a perceived use case that many people shy away from. To rectify that, I've been shepherding the adoption of [Power BI](https://powerbi.microsoft.com), Microsoft's next generation business intelligence toolkit. It's built on a modified Analysis Services Tabular Model and TypeScript, a superset of JavaScript, so Power BI is fast and works everywhere a JavaScript engine can run \(so, everywhere\). Coupled with an Office 365 Enterprise subscription and a well maintained Active Directory, Power BI doesn't require any additional skills beyond Excel, but provides interactive visualizations and great collaboration capabilities. However, any visualization layer is only as good as the data it presents. My challenge has been to create an authoritative data source for Power BI to tap.
