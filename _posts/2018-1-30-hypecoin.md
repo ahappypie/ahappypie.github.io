@@ -2,5 +2,5 @@
 layout: post
 title: "Hypecoin"
 date: 2018-1-30
+excerpt: "The one about residual claims"
 ---
-The one about asset-back securities with non-liquid assets.

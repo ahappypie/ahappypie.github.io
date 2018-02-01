@@ -2,6 +2,7 @@
 layout: post
 title: "Introducing ldr.js"
 date: 2017-1-23
+excerpt: "The one about a project"
 ---
 <div>
   <img class="ui avatar image" src="/images/avatars/node.jpg">

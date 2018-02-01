@@ -2,6 +2,7 @@
 layout: post
 title: "My Core Environment"
 date: 2017-4-10
+excerpt: "The one about saving the environment"
 ---
 <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">

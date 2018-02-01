@@ -2,6 +2,7 @@
 layout: post
 title: "The FIJI Water Flat File ETL Pipeline"
 date: 2017-6-23
+excerpt: "The one about architecture"
 ---
 <div>
   <img class="ui avatar image" src="/images/avatars/azure.png">

@@ -2,6 +2,7 @@
 layout: post
 title: "A Chance for Retail in the Amazon Age"
 date: 2017-8-08
+excerpt: "The one about survival"
 ---
 All across the country, malls - the intersection of social and commercial life for the last several decades - are dead or dying. The Internet - more precisely, a book company - came for them. Amazon came for them. Maybe not on purpose, but too late to stop now. Amazon has created a simpler retail world - migrate to ecommerce, or die.
 

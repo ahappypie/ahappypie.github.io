@@ -2,6 +2,7 @@
 layout: post
 title: "Twitter Sentiment Demo"
 date: 2017-3-14
+excerpt: "The one about streaming data"
 ---
 <div>
   <img class="ui avatar image" src="/images/avatars/scala.png" title="Scala">

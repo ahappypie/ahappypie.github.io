@@ -2,6 +2,7 @@
 layout: post
 title: "Microservices, Microcosm"
 date: 2017-10-22
+excerpt: "The one about nature"
 ---
 I had the great fortune several years ago to be introduced to a software architecture that consisted of many small pieces, all doing one job, adding up to something great. I didn't know it at the time, but my first experience in real-world software architecture had been in microservices, and, quite frankly, I haven't looked back.
 
