@@ -1,0 +1,35 @@
+{
+  "name": "ahappypie.github.io",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "build-gh-pages": "next build && next export -o ./docs/ && touch ./docs/.nojekyll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahappypie/ahappypie.github.io.git"
+  },
+  "author": "Brian Bagdasarian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahappypie/ahappypie.github.io/issues"
+  },
+  "private": true,
+  "dependencies": {
+    "next": "^10.2.3",
+    "next-themes": "^0.0.14",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.0",
+    "tailwindcss": "^2.1.2"
+  }
+}
