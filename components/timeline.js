@@ -6,6 +6,19 @@ export default function Timeline() {
 
     return (
         <div>
+            <Divider/>
+            <Year>Right Now</Year>
+            <ul>
+                <Step title="Architecting the Future">
+                    I am in the final stages of deploying Nativo's next generation data architecture, based on
+                    Kafka and Delta Lake.
+                </Step>
+                <Step title="Building Together">
+                    I am leading Nativo's technical integration with Databricks, ensuring our data engineering and data science
+                    teams have effective infrastructure and a single source of truth.
+                </Step>
+            </ul>
+            <Divider/>
             <Year>2020</Year>
             <ul>
                 <Step title="Joined Nativo">

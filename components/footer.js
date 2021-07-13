@@ -25,7 +25,12 @@ export default function Footer() {
                             Projects
                         </a>
                     </Link>
-                    <Link href="/cv">
+                    <Link href="/about">
+                        <a className="text-gray-500 hover:text-gray-600 transition">
+                            About
+                        </a>
+                    </Link>
+                    <Link href="/files/bbagdasarian_resume.pdf">
                         <a className="text-gray-500 hover:text-gray-600 transition">
                             Resume
                         </a>
