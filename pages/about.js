@@ -10,8 +10,8 @@ export default function About() {
                 </h1>
                 <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
                     <p>
-                        Hi, I’m Brian. I solve fundamental problems. I work at Nativo as a Big Data Engineer
-                        responsible for next generation data infrastructure.
+                        Hi, I’m Brian. I solve fundamental problems. I work at Cosm as a Senior Data Engineer
+                        responsible for data infrastructure.
                     </p>
                     <p>
                         I’ve worked across many industries including ad tech, private equity, retail

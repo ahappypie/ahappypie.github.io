@@ -9,8 +9,8 @@ export default function Home() {
                     Hi, I’m Brian Bagdasarian
                 </h1>
                 <h2 className="prose text-gray-600 dark:text-gray-400 mb-16">
-                    I solve fundamental problems. Right now, I work as a Big Data Engineer
-                    at Nativo on next generation data infrastructure. This site is a little look at the work I do
+                    I solve fundamental problems. Right now, I work as a Senior Data Engineer
+                    at Cosm on data infrastructure. This site is a little look at the work I do
                     –&nbsp;
                     <Link href="/projects">
                         <a>take a look at some of my projects</a>
