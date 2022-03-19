@@ -9,8 +9,15 @@ export default function Timeline() {
             <Divider/>
             <Year>Right Now</Year>
             <ul>
+                <Step title="An Extendable Foundation">
+                    Building the base components for a successful data platform.
+                </Step>
+            </ul>
+            <Divider/>
+            <Year>2021</Year>
+            <ul>
                 <Step title="Joined Cosm">
-                    I am joining Cosm to build data systems that power the future of live entertainment.
+                    I joined Cosm to build data systems that power the future of live entertainment.
                 </Step>
                 <Step title="Architecting the Future">
                     Deployed Nativo's next generation data architecture, based on
