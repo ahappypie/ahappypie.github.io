@@ -1,6 +1,6 @@
 import Container from 'components/container';
 import Divider from 'components/timeline/divider';
-import { allProjects, Project } from '.contentlayer/generated';
+import { allProjects, Project } from 'contentlayer/generated';
 import ProjectPost from 'components/projectpost';
 
 export default function Projects({ projects }: { projects: Project[] }) {
@@ -11,8 +11,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
           Projects
         </h1>
         <p className="tracking-tight text-gray-600 dark:text-gray-400">
-          Check back for thoughts and retrospectives on projects I've
-          contributed to.
+          Thoughts and retrospectives on projects I've contributed to.
         </p>
         <Divider />
         {projects.map((proj) => (

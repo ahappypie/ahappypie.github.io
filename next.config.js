@@ -9,5 +9,8 @@ module.exports = withContentlayer({
   experimental: {
     legacyBrowsers: false,
     browsersListForSwc: true
+  },
+  images: {
+    unoptimized: true
   }
 });

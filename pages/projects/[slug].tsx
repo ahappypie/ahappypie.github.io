@@ -1,13 +1,29 @@
+// @ts-ignore import path
+import { allProjects, Project } from 'contentlayer/generated';
+import Container from '../../components/container';
 import Image from 'next/image';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 
-import Container from 'components/container';
-import { PropsWithChildren } from 'react';
-import { Project } from '.contentlayer/generated';
+export async function getStaticPaths() {
+  const paths: string[] = allProjects.map((post) => `/projects/${post.slug}`);
+  return {
+    paths,
+    fallback: false
+  };
+}
 
-export default function ProjectLayout({
-  children,
-  post
-}: PropsWithChildren<{ post: Project }>) {
+export async function getStaticProps({ params }) {
+  const post: Project = allProjects.find((post) => post.slug === params.slug);
+  return {
+    props: {
+      post
+    }
+  };
+}
+
+export default function ProjectLayout({ post }: { post: Project }) {
+  const MDXContent = useMDXComponent(post.body.code);
+
   return (
     <Container
       title={`${post.title} – Brian Bagdasarian`}
@@ -39,8 +55,8 @@ export default function ProjectLayout({
             </p>
           </div>
         </div>
-        <div className="w-full mt-4 prose dark:prose-dark max-w-none">
-          {children}
+        <div className="w-full mt-4 prose dark:prose-invert max-w-none">
+          <MDXContent />
         </div>
       </article>
     </Container>
