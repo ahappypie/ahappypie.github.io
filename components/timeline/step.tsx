@@ -1,7 +1,7 @@
 export default function Step({ title, children }) {
   return (
     <li className="mb-4 ml-2">
-      <div className="flex items-center mb-2 text-green-700 dark:text-green-300">
+      <div className="flex items-center mb-2 text-green-600 dark:text-green-400">
         <span className="sr-only">Check</span>
         <svg className="h-4 w-4 mr-2" viewBox="0 0 24 24">
           <g

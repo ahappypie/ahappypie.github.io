@@ -18,11 +18,9 @@ export default function About() {
             equity, retail and consumer packaged goods.
           </p>
           <p>
-            I grew up in Los Angeles and went to school at New York University,
-            where I was fortunate enough to craft my own program of study at the
-            Gallatin School of Individualized Study. I was most interested in
-            the interplay between data and decision making, with a special focus
-            on how emerging data technologies affect political decisions.
+            I studied the interplay between data and decision making, with a
+            special focus on how emerging data technologies affect political
+            decisions.
           </p>
         </div>
         <h3 className="font-medium mb-2 text-lg">

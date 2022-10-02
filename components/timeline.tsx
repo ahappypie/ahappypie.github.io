@@ -70,9 +70,10 @@ export default function Timeline() {
       <ul>
         <Step title="Joined BlueLine Grid">
           My first step in the world of software engineering. I supported
-          infrastructure and backend development. I was given the (fateful) job
-          of evaluating Scala and Akka for backend services - and haven't
-          written a line of Java since.
+          infrastructure and backend development. I configured Jenkins and
+          TestFlight for our iOS app, and was given the fateful job of
+          evaluating Scala and Akka for backend services - and haven't written a
+          line of Java since.
         </Step>
       </ul>
       <Divider />

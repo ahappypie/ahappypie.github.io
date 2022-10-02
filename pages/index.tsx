@@ -17,11 +17,15 @@ export default function Home() {
         </p>
         <p className="prose text-gray-600 dark:text-gray-400">
           <Link href="/projects">
-            <a>Take a look at some of my projects</a>
+            <a className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+              Take a look at some of my projects
+            </a>
           </Link>
           {' or '}
           <Link href="/about">
-            <a>or learn more about me.</a>
+            <a className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+              or learn more about me.
+            </a>
           </Link>
         </p>
       </div>
