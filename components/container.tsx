@@ -51,16 +51,14 @@ export default function Container(props) {
           Skip to content
         </a>
         <div className="ml-[-0.60rem]">
-          <NextLink href="/">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Home</a>
+          <NextLink href="/" className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
+            Home
           </NextLink>
-          <NextLink href="/projects">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
+          <NextLink href="/projects" className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
               Projects
-            </a>
           </NextLink>
-          <NextLink href="/about">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">About</a>
+          <NextLink href="/about" className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
+            About
           </NextLink>
         </div>
         <button

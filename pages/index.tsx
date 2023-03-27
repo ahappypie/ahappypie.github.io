@@ -16,16 +16,12 @@ export default function Home() {
           systems.
         </p>
         <p className="prose text-gray-600 dark:text-gray-400">
-          <Link href="/projects">
-            <a className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+          <Link href="/projects" className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
               Take a look at some of my projects
-            </a>
           </Link>
           {' or '}
-          <Link href="/about">
-            <a className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+          <Link href="/about" className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
               or learn more about me.
-            </a>
           </Link>
         </p>
       </div>
