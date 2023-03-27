@@ -5,6 +5,59 @@ summary: 'My introduction to reactive systems.'
 publishedAt: '2014-09-07'
 ---
 ## Background
-An exploration of Scala and Akka as a first-time user.
+As a brand new engineer, I was asked to evaluate Scala and Akka for backend services. Along the way, I learned how to
+learn new programming languages and techniques while still contributing value, and an important lesson about data.
 
-*Check back later for more.*
+## A New Language
+For the first-time user (let alone first-time engineer), Scala can be a daunting language. This isn't exactly approachable:
+```scala
+def foldLeft[B](z: B)(op: (B, A) ⇒ B): B
+```
+For better or worse, a reasonable IDE will greet you with things like this when dealing with Scala collections. Lots of functions
+with generic parameters that do increasingly generic things. And here is the first lesson: when in doubt, try it out. IDEs
+with built in debuggers are modern magic - use them. Scala is a statically typed language - meaning when it thinks something
+is wrong, it won't compile. You can be reasonable assured that compiled Scala code is going to run *something*. So run it!
+Place breakpoints! Not sure what this crazy function does? Write a quick demo and find out. Learning by doing is definitely
+not the wrong way, especially in software where changes are so easy to make. After a couple of tries, you realize
+`collection.foldLeft(0.0)(_ + _)` is just a *really* fancy way of saying give me the sum of this collection as a double.
+
+## Behave!
+After a while, Scala becomes a somewhat approachable language (tip: ignore the *purely functional* stuff if you don't need it.) -
+it can be object-oriented, like Java, or it can be functional, like Python, or it can be both! Both is a bit of a stretch
+sometimes, so I found it best to pick one. In this project, I took the object oriented approach, and quickly discovered I needed
+something more flexible to handle HTTP requests. Enter the Akka framework and **spray-can**, an excellent HTTP server (edit:
+from the future, spray-can is missed greatly). Akka is a message-driven Actor Framework for the JVM, inspired by Erlang, where
+each object (an actor) has behaviors (actions) that are triggered by messages. For instance, if I want to write something to a database,
+I might have a DbActor with a write method, triggered by a WriteMessage message.
+
+More interestingly, Actors also have a lifecycle. You can take advantage of this to do things like setup and teardown database connections
+in a more dynamic fashion than a traditional constructor. Akka happens to be terrifyingly efficient, and can house a truly ludicrous
+number of actors in a single machine. Seriously - they only take up a few hundred bytes of memory each. So throwing lots of messages around
+and having actors spin up and down in response is no big deal. This allows you to encapsulate units of work into small, purpose built actors.
+
+Putting together behavior and lifecycle is more than just an efficient programming paradigm, it also helps frame how you think about your
+system. As my first real project, I had never dealt with HTTP requests or databases before. But once I realized what Akka was providing me,
+I began to understand everything as a set of behaviors, and the pieces began to fall into place. And this was the second lesson - use your tools.
+It's somewhat trivial, but software tools are no different than physical tools. Akka is just a hammer. A very, very special hammer, that
+if you swing in a particular way, does things that other hammers do not.
+
+## Missing in Action
+After you do all the programming, and all the testing, it's time for production. In this project, production was gathering
+information from webhooks sent by Mailgun, triggered by email marketing campaigns. The goal was simple - understand how
+people are interacting with the messaging we are sending out into the world. So, up goes the server, and out go the emails.
+The next morning, you wake up, check the database, and there's...not much. 100 events, give or take. Given you just sent
+thousands or tens of thousands of emails, that doesn't seem right. According to Mailgun's documentation, you should be getting events
+for opens, clicks, etc. You're a first time engineer, so maybe there's a mistake, right? There's definitely a mistake. You apologize,
+"my fault, it'll be fixed by the end of the day." More testing, more programming. Doesn't seem like anything is wrong. Ask your boss, maybe
+it's related to the infrastructure? Nope, everything looks good on our end. So what's the problem? Spam. Your email is spam.
+Of course it's spam, you're on a brand new domain sending tens of thousands of emails. The few events you are getting back are the people
+unfortunate enough to have an email without a decent spam filter. And this is the final lesson from this project - lack of data is still data,
+specifically, it's the absence of it. That's still a valid piece of analysis, even if it's not the one anyone wants to hear. But just
+like the scenarios when you have lots of data, you can still take action based on it. In this case? Make sure your emails are getting past
+the spam filter.
+
+## Conclusion
+#### Lessons Learned
+1) Try New Things
+2) Trust Your Tools
+3) No Data is Data
