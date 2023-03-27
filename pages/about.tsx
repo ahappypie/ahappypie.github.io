@@ -11,11 +11,11 @@ export default function About() {
         <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
           <p>
             Hi, I’m Brian. I solve fundamental problems. I work at Cosm as a
-            Senior Data Engineer responsible for data infrastructure.
+            Senior Data Engineer responsible for platform and data infrastructure.
           </p>
           <p>
-            I’ve worked across many industries including ad tech, private
-            equity, retail and consumer packaged goods.
+            I’ve worked across many industries including immersive entertainment,
+            ad tech, private equity, retail and consumer packaged goods.
           </p>
           <p>
             I studied the interplay between data and decision making, with a

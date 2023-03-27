@@ -8,12 +8,19 @@ export default function Timeline() {
       <Divider />
       <Year>Right Now</Year>
       <ul>
-        <Step title="An Extendable Foundation">
+        <Step title="The Next Frontier">
           Designing stateful systems for the next-generation immersive
           entertainment platform.
         </Step>
       </ul>
       <Divider />
+      <Year>2022</Year>
+      <ul>
+        <Step title="A Platform for All">
+          Helped design, scale and support a fully-remote development platform for
+          a multi-language monorepo and dozens of developers.
+        </Step>
+      </ul>
       <Year>2021</Year>
       <ul>
         <Step title="Joined Cosm">
