@@ -9,10 +9,10 @@ export default function Home() {
           Brian Bagdasarian
         </h1>
         <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-          Senior Data Engineer at <span className="font-bold">Cosm</span>
+          Lead Platform Engineer at <span className="font-bold">Cosm</span>
         </h2>
         <p className="prose text-gray-600 dark:text-gray-400">
-          I design fundamental systems. Right now, I mostly work on stateful
+          I design fundamental systems. Right now, I mostly work on complex distributed
           systems.
         </p>
         <p className="prose text-gray-600 dark:text-gray-400">

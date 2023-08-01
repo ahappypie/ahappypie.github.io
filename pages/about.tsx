@@ -11,7 +11,7 @@ export default function About() {
         <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
           <p>
             Hi, I’m Brian. I solve fundamental problems. I work at Cosm as a
-            Senior Data Engineer responsible for platform and data infrastructure.
+            Lead Platform Engineer responsible for platform and data infrastructure.
           </p>
           <p>
             I’ve worked across many industries including immersive entertainment,

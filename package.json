@@ -1,6 +1,6 @@
 {
   "name": "ahappypie.github.io",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "next build",
     "lint": "next lint",
     "start": "next start",
-    "build-gh-pages": "next build && next export -o ./docs/ && touch ./docs/.nojekyll"
+    "build-gh-pages": "next build && next export -o ./docs/ && touch ./docs/.nojekyll && git add ./docs"
   },
   "repository": {
     "type": "git",
