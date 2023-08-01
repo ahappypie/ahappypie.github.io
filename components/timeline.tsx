@@ -9,8 +9,9 @@ export default function Timeline() {
       <Year>Right Now</Year>
       <ul>
         <Step title="The Next Frontier">
-          Designing stateful systems for the next-generation immersive
-          entertainment platform.
+          Designing complex systems for the next-generation immersive
+          entertainment platform, including proving immutable infrastructure concepts
+          for management & control of legacy on-premise systems.
         </Step>
       </ul>
       <Divider />
@@ -19,6 +20,9 @@ export default function Timeline() {
         <Step title="A Platform for All">
           Helped design, scale and support a fully-remote development platform for
           a multi-language monorepo and dozens of developers.
+        </Step>
+        <Step title="Managable Infrastructure Abstractions">
+          Designed an infrastructure-as-code framework for granular control of cloud resources.
         </Step>
       </ul>
       <Year>2021</Year>
