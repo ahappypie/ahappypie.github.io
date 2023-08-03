@@ -18,6 +18,25 @@ const computedFields: ComputedFields = {
   slug: {
     type: 'string',
     resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, '')
+  },
+  structuredData: {
+    type: 'json',
+    resolve: (doc) => ({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: doc.title,
+      datePublished: doc.publishedAt,
+      dateModified: doc.publishedAt,
+      description: doc.summary,
+      image: doc.image
+        ? `https://ahappypie.github.io${doc.image}`
+        : `https://ahappypie.github.io/og?title=${doc.title}`,
+      url: `https://ahappypie.github.io/${doc._raw.flattenedPath}`,
+      author: {
+        '@type': 'Person',
+        name: 'Brian Bagdasarian',
+      },
+    })
   }
 };
 
@@ -34,7 +53,7 @@ const Project = defineDocumentType(() => ({
   computedFields
 }));
 
-const contentLayerConfig = makeSource({
+export default makeSource({
   contentDirPath: 'data',
   documentTypes: [Project],
   mdx: {
@@ -54,5 +73,3 @@ const contentLayerConfig = makeSource({
     // ]
   }
 });
-
-export default contentLayerConfig;
