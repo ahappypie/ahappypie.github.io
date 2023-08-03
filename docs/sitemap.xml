@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://ahappypie.github.io</loc>
+<lastmod>2023-08-03</lastmod>
+</url>
+<url>
+<loc>https://ahappypie.github.io/projects</loc>
+<lastmod>2023-08-03</lastmod>
+</url>
+<url>
+<loc>https://ahappypie.github.io/about</loc>
+<lastmod>2023-08-03</lastmod>
+</url>
+<url>
+<loc>https://ahappypie.github.io/projects/frontend-for-iac</loc>
+<lastmod>2022-08-22T00:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>https://ahappypie.github.io/projects/mailgun-webhook</loc>
+<lastmod>2014-09-07T00:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>https://ahappypie.github.io/projects/remote-migrations</loc>
+<lastmod>2019-12-14T00:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>https://ahappypie.github.io/projects/self-service-bi</loc>
+<lastmod>2018-05-18T00:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>https://ahappypie.github.io/projects/transactional-data-lake</loc>
+<lastmod>2020-09-02T00:00:00.000Z</lastmod>
+</url>
+</urlset>

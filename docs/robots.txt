@@ -1,0 +1,4 @@
+User-Agent: *
+
+Host: https://ahappypie.github.io
+Sitemap: https://ahappypie.github.io/sitemap.xml
