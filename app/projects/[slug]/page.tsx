@@ -73,3 +73,7 @@ export default async function Projects({ params }) {
     </section>
   );
 }
+
+export async function generateStaticParams() {
+  return allProjects.map((post) => {slug: `/projects/${post.slug}`});
+}
