@@ -7,7 +7,8 @@
     "build": "next build",
     "lint": "next lint",
     "start": "next start",
-    "build-gh-pages": "next build && touch ./docs/.nojekyll && git add ./docs"
+    "build-gh-pages": "next build && touch ./docs/.nojekyll && git add ./docs",
+    "changesets": "npx changeset"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "@types/react": "18.2.18",
     "eslint": "^8.46.0",
     "eslint-config-next": "^13.4.12",
-    "prettier": "^3.0.1"
+    "prettier": "^3.0.1",
+    "@changesets/cli": "^2.26.2"
   }
 }
