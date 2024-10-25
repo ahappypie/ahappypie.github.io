@@ -8,8 +8,25 @@ export default function Timeline() {
       <Divider />
       <Year>Right Now</Year>
       <ul>
-        <Step title="The Next Frontier">
-          Designing complex systems for the next-generation immersive
+        <Step title="Repeatable Processing">
+          Bringing determinism to petabytes of real time data.
+        </Step>
+      </ul>
+      <Divider />
+      <Year>2024</Year>
+      <ul>
+        <Step title="Launch!">
+          Launched Cosm, the future of immersive entertainment.
+        </Step>
+      </ul>
+      <Divider />
+      <Year>2023</Year>
+      <ul>
+        <Step title="Data Leadership">
+          Grew a multi-disciplinary, cross-functional data team from scratch.
+        </Step>
+        <Step title="Complex Improvement">
+          Designed complex systems for the next-generation immersive
           entertainment platform, including proving immutable infrastructure concepts
           for management & control of legacy on-premise systems.
         </Step>

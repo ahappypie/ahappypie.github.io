@@ -9,10 +9,10 @@ export default async function Page() {
       </h1>
       <p className="prose prose-neutral dark:prose-invert">
         {`I'm a systems designer, platform builder, and process improver. I currently
-          work as Lead Platform Engineer at `}
-        <a href="https://cosm.com"
+          work as Senior Data Platform Engineer at `}
+        <a href="https://amberdata.io"
            className="hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
-        >Cosm</a>.
+        >Amberdata</a>.
       </p>
       <div className="prose prose-neutral dark:prose-invert">
         <p>

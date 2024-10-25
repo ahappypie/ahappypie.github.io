@@ -1,6 +1,6 @@
 {
   "name": "ahappypie.github.io",
-  "version": "2.3.4",
+  "version": "2.4.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
@@ -8,7 +8,8 @@
     "lint": "next lint",
     "start": "next start",
     "build-gh-pages": "next build && touch ./docs/.nojekyll && git add ./docs",
-    "changesets": "npx changeset"
+    "changesets": "npx changeset",
+    "bump": "npx changeset version && git add CHANGELOG.md"
   },
   "repository": {
     "type": "git",
