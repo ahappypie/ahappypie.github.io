@@ -24,7 +24,7 @@ export default function About() {
           className="flex items-center text-blue-600 dark:text-gray-100"
           target="_blank"
           rel="noopener noreferrer"
-          href="/files/bbagdasarian_resume.pdf"
+          href="/files/bbagdasarian_professional.pdf"
         >
           <Outlink/> {` Grab a PDF copy of my resume`}
         </a>
