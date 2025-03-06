@@ -9,11 +9,11 @@ export default function About() {
       </h1>
       <div className="prose prose-neutral dark:prose-invert mb-8">
         <p>
-          {`Currently: Senior Data Platform Engineer, `}
-          <a href="https://amberdata.io"
-             className="hover:text-neutral-800 dark:hover:text-neutral-100 transition-all">
-            Amberdata
-          </a>
+          {`Currently: Seeking Strategic Leadership Opportunity `}
+          {/*<a href="https://amberdata.io"*/}
+          {/*   className="hover:text-neutral-800 dark:hover:text-neutral-100 transition-all">*/}
+          {/*  Amberdata*/}
+          {/*</a>*/}
         </p>
         <p>
           Academics: Gallatin School, New York University

@@ -8,15 +8,15 @@ export default async function Page() {
         Brian Bagdasarian
       </h1>
       <p className="prose prose-neutral dark:prose-invert">
-        {`I'm a systems designer, platform builder, and process improver. I currently
-          work as Senior Data Platform Engineer at `}
-        <a href="https://amberdata.io"
-           className="hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
-        >Amberdata</a>.
+        {`I'm a systems designer, platform builder, and process improver. I am currently
+          seeking a strategic leadership role where I can make a long term impact with an organization. `}
+        {/*<a href="https://amberdata.io"*/}
+        {/*   className="hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"*/}
+        {/*>Amberdata</a>.*/}
       </p>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I've worked across many industries, including immersive entertainment,
+          I've worked across many industries, including fintech, immersive entertainment,
           ad tech, private equity, retail, and consumer packaged goods.
         </p>
         <p>

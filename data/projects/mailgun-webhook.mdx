@@ -16,7 +16,7 @@ def foldLeft[B](z: B)(op: (B, A) ⇒ B): B
 For better or worse, a reasonable IDE will greet you with things like this when dealing with Scala collections. Lots of functions
 with generic parameters that do increasingly generic things. And here is the first lesson: when in doubt, try it out. IDEs
 with built in debuggers are modern magic - use them. Scala is a statically typed language - meaning when it thinks something
-is wrong, it won't compile. You can be reasonable assured that compiled Scala code is going to run *something*. So run it!
+is wrong, it won't compile. You can be reasonably assured that compiled Scala code is going to run *something*. So run it!
 Place breakpoints! Not sure what this crazy function does? Write a quick demo and find out. Learning by doing is definitely
 not the wrong way, especially in software where changes are so easy to make. After a couple of tries, you realize
 `collection.foldLeft(0.0)(_ + _)` is just a *really* fancy way of saying give me the sum of this collection as a double.
