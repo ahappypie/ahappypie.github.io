@@ -1,0 +1,122 @@
+---
+import Main from '@layouts/Main.astro';
+import AcademicCard from '@components/AcademicCard.astro';
+import Timeline from '@components/Timeline.astro';
+import ExternalLink from '@lucide/astro/icons/external-link';
+
+const timelineData = [
+  {
+    time: "Summer 2025 - Present",
+    title: "UCLA Anderson: New Horizons",
+    items: ["Developed & Led Foundational Tech Skills Workshop Series"]
+  },
+  {
+    time: "Summer 2024 - Spring 2025",
+    title: "Amberdata: Delivering with Determinism",
+    items: [
+      "Delivered petabytes of real time data using Databricks & Redpanda in half the cost",
+      "Introduced deterministic developer platform using Bazel & Nix",
+      "Optimized Go systems with continuous profiling",
+      "First experimental conversational agent for onboarding & customer support with RAG and fine tuning",
+      "Next-generation data delivery roadmap on the Apache Arrow ecosystem"
+    ]
+  },
+  {
+    time: "Summer 2023 - Summer 2024",
+    title: "Cosm: Launching Venues",
+    items: [
+      "Managed Data team as product and engineering manager",
+      "Led cross functional strategic effort across 6 departments and 30+ people to utilize our unified data platform",
+      "Mentored engineers in Cosm's internship program",
+      "Supported Product and Marketing teams using real time customer data with Databricks and Redpanda",
+      "Designed and implemented custom infrastructure as code framework with Pulumi and TypeScript",
+      "Drove CPRA & GDPR privacy compliance across the Cosm Platform & Databricks, Transcend & PostHog"
+    ]
+  },
+  {
+    time: "Fall 2021 - Summer 2023",
+    title: "Cosm: Building a Foundation",
+    items: [
+      "Founding member of Cosm's Platform Team",
+      "Implemented Data Lakehouse using Medallion Architecture on Databricks",
+      "Built network and Kubernetes infrastructure with EKS, Cilium & Flux",
+      "Integrated real time change data capture with MongoDB, Debezium, Redpanda & Databricks",
+      "Hackathon winner, \"Digistar Data Cloud,\" multidimensional search across billions of stars"
+    ]
+  },
+  {
+    time: "Winter 2020 - Fall 2021",
+    title: "Nativo: Architecting the Future",
+    items: [
+      "Moved to streaming data architecture with Databricks & Apache Kafka",
+      "Boosted machine learning and artificial intelligence training performance using Databricks",
+      "Optimized queries on 140+ TB Snowflake warehouse",
+      "Automated internal billing workflow using Apache Spark"
+    ]
+  },
+  {
+    time: "Spring 2018 - Winter 2019",
+    title: "Regent: Scaling Solutions",
+    items: [
+      "Designed a shared services data platform deployed on DigitalOcean & Kubernetes (the hard way)",
+      "Led retail software platform migration built on the platform"
+    ]
+  },
+  {
+    time: "Summer 2015 - Spring 2018",
+    title: "The Wonderful Company: Introducing Data Driven Techniques",
+    items: [
+      "Architected FIJI Water's first automated data pipeline and business intelligence platform",
+      "Led trainings for the nationwide sales team productive self service business intelligence",
+      "Grew from intern to first Data Engineer"
+    ]
+  },
+  {
+    time: "Winter 2014 - Fall 2014",
+    title: "Blueline Grid: First Software Engineering Job",
+    items: [
+      "Created iOS app deployment pipeline using Git, Jenkins, and TestFlight",
+      "Developed microservice utilizing Scala, Akka and MySQL to manage marketing campaigns"
+    ]
+  }
+]
+---
+
+<Main>
+  <section>
+    <div class="prose prose-neutral dark:prose-invert">
+      <div class="mb-4">
+        <h1 class="font-medium text-2xl mb-2 tracking-tighter">About Me</h1>
+        <span>Pure Problem Solver in any environment, at any scale. Designed, built, operated & managed projects big & small my whole life. Always moving forward. If you're looking for next-generation solutions, reach out at the profile links in the footer and mention this site.</span>
+        <p class="font-bold">Currently Pursuing MBA, Seeking Strategic Leadership Opportunity</p>
+        <div class="mb-4 text-lg">
+          <a
+            class="flex items-center text-blue-600 dark:text-gray-100"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="/files/bbagdasarian_professional.pdf"
+          ><ExternalLink class="h-4 w-4 mr-1 ml-1 stroke-2"/> Grab a PDF resume
+          </a>
+        </div>
+      </div>
+      <div class="mb-4">
+        <h1 class="font-medium text-2xl mb-2 tracking-tighter">Education</h1>
+        <div class="flex flex-col w-full mb-10 sm:flex-row">
+          <AcademicCard degree="Masters of Business Administration" color="blue">
+            <div class="mb-1 font-medium text-blue-500">UCLA Anderson, Class of 2027</div>
+            <div class="text-sm/6 text-blue-500">Technology Management & Leadership Development Specializations</div>
+          </AcademicCard>
+          <AcademicCard degree="Bachelor of Arts" color="purple">
+            <div class="mb-1 font-medium text-purple-500">NYU Gallatin, Class of 2017</div>
+            <div class="text-sm/6 text-purple-500">Individualized Study, Data Driven Decision Making</div>
+            <div class="text-sm/6 text-purple-500">Joint Minor, Computer Science & Mathematics</div>
+          </AcademicCard>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h1 class="font-medium text-2xl mb-4 tracking-tighter">Career Timeline</h1>
+    <Timeline data={timelineData}/>
+  </section>
+</Main>

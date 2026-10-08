@@ -1,0 +1,419 @@
+{
+  "basics": {
+    "name": "Brian Bagdasarian",
+    "headline": "Technology Leader & Innovation Driver, Data Platform & AI Infrastructure",
+    "email": "brian.bagdasarian.2027@anderson.ucla.edu",
+    "phone": "(818) 216-7171",
+    "location": "Los Angeles, CA",
+    "url": {
+      "label": "",
+      "href": ""
+    },
+    "customFields": [],
+    "picture": {
+      "url": "https://avatars.githubusercontent.com/u/2286880?v=4",
+      "size": 64,
+      "aspectRatio": 1,
+      "borderRadius": 6,
+      "effects": {
+        "hidden": false,
+        "border": false,
+        "grayscale": false
+      }
+    }
+  },
+  "sections": {
+    "summary": {
+      "name": "Summary",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "summary",
+      "content": "<p></p>"
+    },
+    "awards": {
+      "name": "Awards",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "awards",
+      "items": []
+    },
+    "certifications": {
+      "name": "Certifications",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "certifications",
+      "items": []
+    },
+    "education": {
+      "name": "Education",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "education",
+      "items": [
+        {
+          "id": "beik7j3897s8uzhq09fu6m2u",
+          "visible": true,
+          "institution": "UCLA Anderson School of Management",
+          "studyType": "",
+          "area": "",
+          "score": "",
+          "date": "July 2025 - Present",
+          "summary": "<p>M.B.A., Technology Innovation &amp; Leadership Development</p><ul><li><p><em>Leadership</em>: Vice President of Tech Skills, Technology Business Association; Easton Fellow, Easton Technology Management Center</p></li><li><p><em>Membership</em>: Energy &amp; Cleantech Association, Entrepreneur Association, John Anderson Golf Club</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "v6j43mzpkavmcj2rjf4sjrds",
+          "visible": true,
+          "institution": "New York University Gallatin School of Individualized Study",
+          "studyType": "",
+          "area": "",
+          "score": "",
+          "date": "September 2013 - December 2016",
+          "summary": "<p>B.A., Data Driven Decision Making; Joint Minor, Computer Science &amp; Mathematics</p><ul><li><p><em>Leadership: </em>Host &amp; Producer, <em>The Cheap Seats</em>, sports talk radio on WNYU 89.1 FM</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ]
+    },
+    "experience": {
+      "name": "Selected Professional Experience",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "experience",
+      "items": [
+        {
+          "id": "sncu5gaekqwutc3s5sfgp89m",
+          "visible": true,
+          "company": "Amberdata",
+          "position": "Data Platform Engineer",
+          "location": "Remote",
+          "date": "July 2024 - February 2025",
+          "summary": "<ul><li><p>Trained multiple teams of L4/5 engineers (12+ people) on best practices in real time data engineering on Databricks, cutting cost in half even with 10x more data, saving over $1.8m in annual cloud spend at petabyte scale</p></li><li><p>Project lead on enhanced developer platform in collaboration with all development teams, meeting company goals of a 10x increase in production deployment frequency, shipping new features and fixes to customers in hours, not weeks</p></li><li><p>Analyzed data from continuous profiling, identifying sources of instability in business-critical services to improve reliability, decreasing alerts and critical incidents by 80%, eliminating the need for $500k in additional support costs</p></li><li><p>Created roadmap for next-generation data delivery platform, designed to scale from petabytes to tens of petabytes, by working with product, sales, customer service and other engineers</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "mw9vvxxhc0naqytsqg7hbl63",
+          "visible": true,
+          "company": "Cosm",
+          "position": "Lead Platform Engineer",
+          "location": "Hybrid | Playa Vista, CA",
+          "date": "September 2022 - June 2024",
+          "summary": "<ul><li><p>Founding member of Cosm's Platform Team, dedicated to improving developer experience, reliability and performance of core systems, ensuring fast iteration cycles while growing the engineering team from 10 to 75+ members</p></li><li><p>Managed Data team as product and engineering manager, planning and delivering a multi-year roadmap, creating insight into Cosm’s first party ticketing platform and third-party data, building a culture of data-driven decision making</p></li><li><p>Led cross functional strategic effort across 6 departments and 30+ people to utilize our unified data platform of transaction, operational and behavioral data in everyday decisions to assist growing Cosm Venues to a $100m business</p></li><li><p>Mentored engineers in Cosm's internship program, training and converting interns to full-time engineers at the conclusion of the program, creating standard procedures for a robust engineering talent pipeline</p></li><li><p>Supported Product and Marketing teams using real time customer data on Databricks during Cosm’s multi-stage launch at less than $100 per month, culminating in sold-out launch events attended by thousands of customers with extreme efficiency</p></li><li><p>Designed and implemented custom infrastructure as code framework with Pulumi and TypeScript to satisfy the need for quick, precise rollouts of foundational software components</p></li><li><p>Drove CPRA &amp; GDPR privacy compliance across website, mobile and backend, leading engagement with our external partners, including Databricks, Transcend &amp; PostHog</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "m8fxpetqchhcg478rdswqk45",
+          "visible": true,
+          "company": "Cosm",
+          "position": "Senior Data Engineer",
+          "location": "Hybrid | Playa Vista, CA",
+          "date": "September 2021 - September 2022",
+          "summary": "<ul><li><p>Designed a Data Lakehouse in collaboration with stakeholders using Medallion Architecture to centralize, govern and deliver Cosm's disparate venue and business data</p></li><li><p>Built Cosm's network and Kubernetes infrastructure, collaborating with multiple teams including Field Engineering and Corporate IT. Responsible for integration of EKS and supporting tools, notably Cilium and Flux</p></li><li><p>Integrated real time change data capture for rapid analysis of customer behavior during Cosm’s multi-stage launch, supporting product manager understanding of interest &amp; engagement within a new industry</p></li><li><p>Hackathon winner, \"Digistar Data Cloud,\" multidimensional search for billions of stars across dozens of catalogs</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "hsjyw6kceuhvfhrckq3ohiz4",
+          "visible": false,
+          "company": "Nativo",
+          "position": "Big Data Engineer",
+          "location": "Hybrid | El Segundo, CA",
+          "date": "January 2020 - September 2021",
+          "summary": "<ul><li><p>Identified need for streaming data architecture to reduce latency by analyzing product SLA and discussing customer needs with product and support, reduced overall cost 20% ($200k+ annually), even with 100% increase in data volume</p></li><li><p>Boosted machine learning and artificial intelligence training performance 40% by optimizing data science workflow for Databricks platform, collaborating with practitioners to reduce time to market for AI products by 50%</p></li><li><p>Optimized queries on 140+ TB data warehouse, increasing typical query performance 20% and reducing cost 40%, saving $400k annually</p></li><li><p>Automated internal billing workflow, reducing time to invoice customers from 5 days to hours</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "pypj62ke9dcvnqc1ami4yfab",
+          "visible": false,
+          "company": "Regent",
+          "position": "Data Engineer",
+          "location": "Beverly Hills, CA",
+          "date": "July 2018 - December 2019",
+          "summary": "<ul><li><p>Designed and built a shared services data platform, greatly increasing the speed at which new acquisitions could be onboarded, a critical metric of restoring companies to profitability</p></li><li><p>Planned and executed retail software platform migration across 800+ locations, including point of sale and employee authentication, resulting in an 80% decrease in day to day management tasks compared to the previous solution</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "jki70qeb76r9r106aukz6gbz",
+          "visible": false,
+          "company": "FIJI Water",
+          "position": "Data Engineer",
+          "location": "Los Angeles, CA",
+          "date": "April 2017 - May 2018",
+          "summary": "<ul><li><p>Architected and built FIJI Water's first automated data pipeline and business intelligence platform, saving 600+ hours each week on ad hoc depletions reporting and competitive set analysis</p></li><li><p>Led trainings for the nationwide sales team of 120+ members, focused on productive self service business intelligence, allowing representatives on demand access to verified reports and analysis across desktop and mobile environments</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "qipqfw74dq3bba1813yz8lz0",
+          "visible": false,
+          "company": "BlueLine Grid",
+          "position": "Software Engineer",
+          "location": "Remote",
+          "date": "February 2014 - September 2014",
+          "summary": "<ul><li><p>Created iOS app deployment pipeline using Git, Jenkins, and TestFlight, increasing the pace of the QA feedback loop from days to hours</p></li><li><p>Developed microservice utilizing Scala, Akka and MySQL for collection and analysis of Mailgun email campaign response data, giving the business insight into new user acquisition costs</p></li></ul>",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ]
+    },
+    "volunteer": {
+      "name": "Volunteering",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "volunteer",
+      "items": []
+    },
+    "interests": {
+      "name": "Interests",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "interests",
+      "items": [
+        {
+          "id": "o7s7th14b0lnkfhvd48652j0",
+          "visible": true,
+          "name": "Hobbies",
+          "keywords": [
+            "Avid golfer (5 handicap) & beachgoer",
+            "Travel to Hawaii 1-2 months each year",
+            "History buﬀ",
+            "Technology educator",
+            "Homelab manager",
+            "Ask me about space!"
+          ]
+        },
+        {
+          "id": "qwns9mtgmzqgubikc49tazo2",
+          "visible": true,
+          "name": "Volunteer",
+          "keywords": [
+            "Operation Mend Buddy Family"
+          ]
+        }
+      ]
+    },
+    "languages": {
+      "name": "Languages",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "languages",
+      "items": []
+    },
+    "profiles": {
+      "name": "Social",
+      "columns": 2,
+      "separateLinks": true,
+      "visible": true,
+      "id": "profiles",
+      "items": [
+        {
+          "id": "v39h20u2iacm6uew7tn0lqbo",
+          "visible": true,
+          "network": "LinkedIn",
+          "username": "bbagdasarian",
+          "icon": "linkedin",
+          "url": {
+            "label": "",
+            "href": "https://linkedin.com/in/bbagdasarian"
+          }
+        },
+        {
+          "id": "zwu2absvm53e6il4fcq53l4j",
+          "visible": true,
+          "network": "GitHub",
+          "username": "ahappypie",
+          "icon": "github",
+          "url": {
+            "label": "",
+            "href": "https://github.com/ahappypie"
+          }
+        }
+      ]
+    },
+    "projects": {
+      "name": "Headline Technology Projects",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "projects",
+      "items": [
+        {
+          "id": "ikkk3tsi0tv7rtq9iv0qm7et",
+          "visible": true,
+          "name": "Tech Foundations",
+          "description": "",
+          "date": "",
+          "summary": "<p>Developing &amp; delivering multi-session curriculum focused on building deeper understanding of today's technology. Focusing on compute, networking &amp; storage primitives, software delivery, data fundamentals &amp; workflow automation with (and without) AI.</p>",
+          "keywords": [],
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "weckbj2a8xai8s6mtcqujic7",
+          "visible": true,
+          "name": "Pulumi, Turbocharged",
+          "description": "",
+          "date": "",
+          "summary": "<p>Internal Product &amp; Engineering Lead. Fully modular, component-based infrastructure-as-code in TypeScript. Innovative architecture adopted as best practice by Pulumi itself.</p>",
+          "keywords": [],
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "ubvcrobuduf60qprsunrn1s7",
+          "visible": true,
+          "name": "Cloud Native Delivery",
+          "description": "",
+          "date": "",
+          "summary": "<p>Compute Infrastructure &amp; Developer Experience lead for multiple orgs. Built reliable autoscaling &amp; remote developer platforms on Kubernetes, designed Git workflows to move code from local to production without downtime, supported on call rotations with Prometheus and Grafana infrastructure.</p>",
+          "keywords": [],
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "whlq9a1ar2s3zhkfp755etos",
+          "visible": true,
+          "name": "Cost Effective Streaming Data",
+          "description": "",
+          "date": "",
+          "summary": "<p>Refined incremental streaming architecture over years of engineering experience. Now implemented at multiple orgs, including leading engagements with external partners and internal education programs.</p>",
+          "keywords": [],
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "zvyjs15i9oj9gv53n8fqp2n0",
+          "visible": true,
+          "name": "Deterministic Environment-as-Code",
+          "description": "",
+          "date": "",
+          "summary": "<p>Led Nix &amp; Bazel adoption within multiple orgs. Entire macOS/Linux environments controlled via code. No more \"works on my machine\" or multiple layers of virtualization. One command rebuilds my environment exactly as defined.</p>",
+          "keywords": [],
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ]
+    },
+    "publications": {
+      "name": "Publications",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "publications",
+      "items": []
+    },
+    "references": {
+      "name": "References",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "references",
+      "items": []
+    },
+    "skills": {
+      "name": "Skills",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "skills",
+      "items": []
+    },
+    "custom": {}
+  },
+  "metadata": {
+    "template": "gengar",
+    "layout": [
+      [
+        [
+          "summary",
+          "education",
+          "experience",
+          "volunteer",
+          "references"
+        ],
+        [
+          "profiles",
+          "projects",
+          "skills",
+          "interests",
+          "certifications",
+          "awards",
+          "publications",
+          "languages"
+        ]
+      ]
+    ],
+    "css": {
+      "value": "* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",
+      "visible": false
+    },
+    "page": {
+      "margin": 18,
+      "format": "a4",
+      "options": {
+        "breakLine": true,
+        "pageNumbers": true
+      }
+    },
+    "theme": {
+      "background": "#ffffff",
+      "text": "#000000",
+      "primary": "#386de0"
+    },
+    "typography": {
+      "font": {
+        "family": "Open Sans",
+        "subset": "latin",
+        "variants": [
+          "regular"
+        ],
+        "size": 12
+      },
+      "lineHeight": 1.15,
+      "hideIcons": false,
+      "underlineLinks": true
+    },
+    "notes": ""
+  }
+}

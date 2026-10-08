@@ -1,0 +1,20 @@
+---
+import TimelineEntry from '@components/TimelineEntry.astro';
+
+interface TimelineEntryProps {
+  time: string
+  title: string
+  items: string[]
+  isLatest?: boolean
+}
+
+interface Props {
+  data: TimelineEntryProps[];
+}
+const { data } = Astro.props
+---
+<ol class="relative border-s border-neutral-600">
+  {data.map((d, index) => (
+    <TimelineEntry time={d.time} title={d.title} items={d.items} isLatest={index === 0}/>
+  ))}
+</ol>
