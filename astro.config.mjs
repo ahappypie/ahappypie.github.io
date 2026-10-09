@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://ahappypie.github.io',
   trailingSlash: 'never',
+  outDir: './docs',
 
   vite: {
     plugins: [tailwindcss()]

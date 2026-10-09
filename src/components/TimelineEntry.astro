@@ -1,19 +1,27 @@
 ---
-import Calendar from '@lucide/astro/icons/calendar-check-2'
+import Calendar from '@lucide/astro/icons/calendar-check-2';
 
 interface Props {
-  time: string
-  title: string
-  items: string[]
-  isLatest?: boolean
+  time: string;
+  title: string;
+  items: string[];
+  isLatest?: boolean;
 }
-const { time, title , items, isLatest = false} = Astro.props;
+const { time, title, items, isLatest = false } = Astro.props;
 ---
+
 <li class="mb-10 ms-6">
   <span class="absolute flex items-center justify-center w-6 h-6 rounded-full -inset-s-3 ring-6 ring-black bg-emerald-700">
-    <Calendar class="w-4 h-4 stroke-emerald-400"/>
+    <Calendar class="w-4 h-4 stroke-emerald-400" />
   </span>
-  <time class="border text-heading text-xs font-medium px-1.5 py-0.5 rounded">{time}</time> {isLatest && <span class="ms-2 border text-xs font-medium px-1.5 py-0.5 rounded">Latest</span>}
+  <time class="border text-heading text-xs font-medium px-1.5 py-0.5 rounded">
+    {time}
+  </time>{' '}
+  {isLatest && (
+    <span class="ms-2 border text-xs font-medium px-1.5 py-0.5 rounded">
+      Latest
+    </span>
+  )}
   <h3 class="flex items-center mb-1 text-lg font-semibold text-heading my-2">
     {title}
   </h3>
