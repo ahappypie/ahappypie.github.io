@@ -6,27 +6,9 @@ interface Props {
 const { degree, color } = Astro.props;
 ---
 
-<div class="w-full mb-10 sm:mb-0 sm:w-1/2 transform hover:scale-105 transition delay-150 duration-300">
-  <div class="relative h-full ml-0 mr-0 sm:mr-10">
-    <span
-      class:list={[
-        'absolute top-0 left-0 w-full h-full mt-1 ml-1 rounded-lg',
-        'bg-' + color + '-500'
-      ]}
-    ></span>
-    <div
-      class:list={[
-        'relative h-full p-5 bg-white dark:bg-neutral-900 border-2 rounded-lg',
-        'border-' + color + '-500'
-      ]}
-    >
-      <div class="flex items-center -mt-5 h-1/2">
-        <h3 class="ml-3 text-lg font-medium">{degree}</h3>
-      </div>
-      <hr class="h-px border-0 bg-neutral-600 dark:bg-neutral-300 mt-1 mb-1" />
-      <div class="mb-8">
-        <slot />
-      </div>
-    </div>
+<div class="academic-card" data-tone={color}>
+  <h3>{degree}</h3>
+  <div class="academic-details">
+    <slot />
   </div>
 </div>

@@ -14,7 +14,7 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<ol class="relative border-s border-neutral-600">
+<ol class="timeline">
   {data.map((d, index) => (
     <TimelineEntry
       time={d.time}

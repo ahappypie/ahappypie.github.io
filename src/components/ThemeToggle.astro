@@ -1,0 +1,85 @@
+---
+import Sun from '@lucide/astro/icons/sun';
+import Moon from '@lucide/astro/icons/moon';
+---
+
+<button
+  class="theme-toggle"
+  type="button"
+  aria-label="Toggle color theme"
+  hidden
+>
+  <Sun class="theme-sun" aria-hidden="true" />
+  <Moon class="theme-moon" aria-hidden="true" />
+</button>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.theme-toggle');
+  const root = document.documentElement;
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function syncButton() {
+    const isDark = getComputedStyle(root).colorScheme === 'dark';
+    const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    button?.setAttribute('aria-label', label);
+    button?.setAttribute('title', label);
+    button?.setAttribute('data-mode', isDark ? 'dark' : 'light');
+  }
+
+  if (button) {
+    syncButton();
+    button.hidden = false;
+
+    button.addEventListener('click', () => {
+      const theme =
+        getComputedStyle(root).colorScheme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = theme;
+      try {
+        localStorage.setItem('theme', theme);
+      } catch {
+        // The toggle still works when browser storage is unavailable.
+      }
+      syncButton();
+    });
+
+    systemTheme.addEventListener('change', syncButton);
+  }
+</script>
+
+<style>
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .theme-toggle[hidden] {
+    display: none;
+  }
+
+  .theme-toggle:hover {
+    background: var(--accent);
+  }
+
+  .theme-toggle svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .theme-sun,
+  .theme-toggle[data-mode='dark'] .theme-moon {
+    display: none;
+  }
+
+  .theme-toggle[data-mode='dark'] .theme-sun {
+    display: block;
+  }
+</style>
