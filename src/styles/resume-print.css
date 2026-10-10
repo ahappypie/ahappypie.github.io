@@ -1,0 +1,299 @@
+/* Imported only by the resume layout; screen styles remain unchanged. */
+@media print {
+  @page {
+    size: letter portrait;
+    margin: 0.4in;
+  }
+
+  html:root.resume-page {
+    color-scheme: light;
+    --paper: #fff;
+    --ink: #111;
+    --muted: #111;
+    --link: #111;
+    --accent: #fff;
+    --surface: #fff;
+    background: #fff;
+    color: #111;
+  }
+
+  html.resume-page body {
+    margin: 0;
+    background: #fff;
+  }
+
+  html.resume-page .resume-controls,
+  html.resume-page .print-hint,
+  html.resume-page astro-dev-toolbar {
+    display: none !important;
+  }
+
+  html.resume-page .resume-preview {
+    width: auto;
+    max-width: none;
+    margin: 0;
+  }
+
+  html.resume-page .resume-document {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    font-size: 10pt;
+    line-height: 1.15;
+    overflow-wrap: normal;
+  }
+
+  html.resume-page .resume-document .resume-header {
+    padding-bottom: 3pt;
+    text-align: center;
+    break-inside: avoid;
+  }
+
+  html.resume-page .resume-document h1 {
+    font-size: 14pt;
+    line-height: 1.05;
+  }
+
+  html.resume-page .resume-document .resume-contact {
+    gap: 2pt 14pt;
+    justify-content: center;
+    margin-top: 3pt;
+    font-size: 10pt;
+  }
+
+  html.resume-page .resume-document .resume-contact a {
+    padding-block: 0;
+    gap: 4pt;
+  }
+
+  html.resume-page .resume-document .resume-contact svg {
+    width: 9pt;
+    height: 9pt;
+  }
+
+  /* Contact text carries the meaning; print icons monochrome. */
+  html.resume-page .resume-document .resume-contact svg path[fill] {
+    fill: currentColor;
+  }
+
+  html.resume-page .resume-document a {
+    color: var(--ink);
+    background: transparent;
+    text-decoration: none;
+  }
+
+  html.resume-page .resume-document h2 {
+    padding-block: 3pt;
+    border-top-width: 1pt;
+    font-size: 10pt;
+    line-height: 1.15;
+    break-after: avoid;
+  }
+
+  html.resume-page .resume-document #experience-heading {
+    border-top: 0;
+  }
+
+  html.resume-page .resume-document h3 {
+    font-size: 10pt;
+    line-height: 1.2;
+    break-after: avoid;
+  }
+
+  html.resume-page .resume-document .resume-job,
+  html.resume-page .resume-document .education-entry {
+    padding-block: 3pt;
+    border-top-width: 0.5pt;
+    font-size: 10pt;
+    line-height: 1.15;
+  }
+
+  /* Long jobs may span pages; keep their headings with the first bullet. */
+  html.resume-page .resume-document article > header {
+    break-inside: avoid;
+    break-after: avoid;
+  }
+
+  html.resume-page .resume-document .job-heading,
+  html.resume-page .resume-document .education-heading {
+    gap: 2pt 8pt;
+  }
+
+  html.resume-page .resume-document .job-subheading,
+  html.resume-page .resume-document .education-subheading {
+    margin-top: 2pt;
+  }
+
+  html.resume-page .resume-document .job-position {
+    font-size: 10pt;
+  }
+
+  html.resume-page .resume-document .job-role {
+    font-size: 10pt;
+  }
+
+  html.resume-page .resume-document .job-dates,
+  html.resume-page .resume-document .job-work,
+  html.resume-page .resume-document .company-description,
+  html.resume-page .resume-document .education-date,
+  html.resume-page .resume-document .education-location {
+    font-size: 10pt;
+  }
+
+  html.resume-page .resume-document .job-dates,
+  html.resume-page .resume-document .job-work,
+  html.resume-page .resume-document .education-date,
+  html.resume-page .resume-document .education-location {
+    color: #111;
+  }
+
+  html.resume-page .resume-document .company-description {
+    font-size: 8pt;
+  }
+
+  html.resume-page .resume-document .company-description-text {
+    font-style: italic;
+  }
+
+  html.resume-page .resume-document .job-technologies {
+    margin-top: 3pt;
+    font-size: 10pt;
+    line-height: 1.15;
+  }
+
+  html.resume-page .resume-document .job-bullets {
+    margin-top: 3pt;
+    font-size: 10pt;
+    line-height: 1.15;
+  }
+
+  html.resume-page .resume-document .resume-experience-short .job-bullets {
+    font-size: 9pt;
+    line-height: 1.25;
+  }
+
+  html.resume-page
+    .resume-document
+    .resume-experience-short
+    .job-bullets
+    li
+    + li {
+    margin-top: 3pt;
+  }
+
+  html.resume-page .resume-document .job-bullets ul,
+  html.resume-page .resume-document .education-bullets ul {
+    padding-left: 11pt;
+    list-style-type: disc;
+  }
+
+  html.resume-page .resume-document .job-bullets li + li,
+  html.resume-page .resume-document .education-bullets li + li {
+    margin-top: 1pt;
+  }
+
+  html.resume-page .resume-document li,
+  html.resume-page .resume-document p {
+    orphans: 2;
+    widows: 2;
+  }
+
+  html.resume-page .resume-document .job-bullets li,
+  html.resume-page .resume-document .education-bullets li {
+    break-inside: avoid;
+  }
+
+  html.resume-page .resume-document .resume-education,
+  html.resume-page .resume-document .resume-interests {
+    margin-top: 3pt;
+  }
+
+  html.resume-page .resume-document .education-entry {
+    break-inside: avoid;
+  }
+
+  html.resume-page .resume-document .education-degree,
+  html.resume-page .resume-document .education-bullets {
+    margin-top: 3pt;
+  }
+
+  html.resume-page .resume-document .resume-interests {
+    break-inside: avoid;
+  }
+
+  html.resume-page .resume-document .interests-details {
+    padding-top: 4pt;
+    border-top-width: 0.5pt;
+  }
+
+  html.resume-page .resume-document .interests-details > div {
+    display: grid;
+    grid-template-columns: 52pt minmax(0, 1fr);
+    gap: 6pt;
+  }
+
+  html.resume-page .resume-document .interests-details > div + div {
+    margin-top: 3pt;
+  }
+
+  html.resume-page .resume-document .interests-details dt {
+    margin-bottom: 0;
+  }
+
+  /* Short resume only: UCLA left, NYU and interests stacked right. */
+  html.resume-page .resume-document .resume-footer-split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 14pt;
+    align-items: start;
+    margin-top: 3pt;
+  }
+
+  html.resume-page .resume-document .resume-footer-split .resume-education {
+    display: contents;
+  }
+
+  html.resume-page .resume-document .resume-footer-split #education-heading {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  html.resume-page
+    .resume-document
+    .resume-footer-split
+    .education-entry:first-of-type {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+  }
+
+  html.resume-page
+    .resume-document
+    .resume-footer-split
+    .education-entry:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  html.resume-page .resume-document .resume-footer-split .resume-interests {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  html.resume-page .resume-document .resume-footer-split,
+  html.resume-page .resume-document .resume-footer-split .education-entry,
+  html.resume-page .resume-document .resume-footer-split h2,
+  html.resume-page .resume-document .resume-footer-split h3,
+  html.resume-page .resume-document .resume-footer-split .education-date,
+  html.resume-page .resume-document .resume-footer-split .education-location {
+    font-size: 9pt;
+  }
+
+  html.resume-page .resume-document .resume-footer-split .education-heading {
+    gap: 1pt 6pt;
+  }
+
+  html.resume-page .resume-document .resume-footer-split .education-degree,
+  html.resume-page .resume-document .resume-footer-split .education-bullets {
+    margin-top: 2pt;
+  }
+}

@@ -3,9 +3,11 @@ import { render, type CollectionEntry } from 'astro:content';
 
 interface Props {
   job: CollectionEntry<'resumeJobs'>;
+  showTechnologies: boolean;
 }
-const { job } = Astro.props;
+const { job, showTechnologies = true } = Astro.props;
 const { company, position, roles, work, start_month, end_month } = job.data;
+const technologies = job.data.technologies;
 const { Content } = await render(job);
 const dateFormatter = new Intl.DateTimeFormat('en-US', {
   month: 'short',
@@ -24,7 +26,10 @@ const workDetails = [work.location, work.arrangement].filter(Boolean);
       <h3 id={`job-${job.id}`}>
         {company.name}
         {company.description && (
-          <span class="company-description"> | {company.description}</span>
+          <span class="company-description">
+            {' | '}
+            <span class="company-description-text">{company.description}</span>
+          </span>
         )}
       </h3>
       {workDetails.length > 0 && (
@@ -50,6 +55,11 @@ const workDetails = [work.location, work.arrangement].filter(Boolean);
   <div class="job-bullets">
     <Content />
   </div>
+  {showTechnologies && technologies.length > 0 && (
+    <p class="job-technologies">
+      <strong>Key technologies:</strong> {technologies.join(', ')}
+    </p>
+  )}
 </article>
 
 <style>
@@ -80,7 +90,6 @@ const workDetails = [work.location, work.arrangement].filter(Boolean);
 
   .job-dates {
     color: var(--muted);
-    font-family: var(--font-mono);
     font-size: 0.75rem;
   }
 
@@ -104,6 +113,12 @@ const workDetails = [work.location, work.arrangement].filter(Boolean);
   }
 
   .job-bullets {
+    margin-top: 0.5rem;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  .job-technologies {
     margin-top: 0.5rem;
     font-size: 0.8125rem;
     line-height: 1.5;

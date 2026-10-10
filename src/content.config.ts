@@ -18,6 +18,7 @@ const resumeJobs = defineCollection({
         description: z.string().min(1).optional()
       }),
       position: z.string().min(1),
+      technologies: z.array(z.string().min(1)).optional(),
       roles: z.array(z.string().min(1)).optional(),
       work: z.object({
         location: z.string().min(1).optional(),

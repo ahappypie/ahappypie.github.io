@@ -1,7 +1,9 @@
 ---
 import Head from '../components/Head.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import Printer from '@lucide/astro/icons/printer';
 import '../styles/global.css';
+import '../styles/resume-print.css';
 
 interface Props {
   title: string;
@@ -10,7 +12,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="resume-page">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,7 +25,24 @@ const { title } = Astro.props;
     <div class="resume-preview">
       <nav class="resume-controls" aria-label="Resume navigation">
         <a href="/about">← Back to about</a>
-        <ThemeToggle />
+        <div class="resume-actions">
+          <div class="print-help">
+            <button
+              class="resume-print-button"
+              type="button"
+              aria-describedby="print-hint"
+              hidden
+            >
+              <Printer width={16} height={16} aria-hidden="true" />
+              Print / Save as PDF
+            </button>
+            <p class="print-hint" id="print-hint" role="tooltip">
+              For PDF: choose US Letter, 100% scale, and turn off browser
+              headers and footers.
+            </p>
+          </div>
+          <ThemeToggle />
+        </div>
       </nav>
       <main class="resume-document">
         <slot />
@@ -31,6 +50,19 @@ const { title } = Astro.props;
     </div>
   </body>
 </html>
+
+<script>
+  const printButton = document.querySelector<HTMLButtonElement>(
+    '.resume-print-button'
+  );
+  if (printButton) {
+    printButton.hidden = false;
+    printButton.addEventListener('click', async () => {
+      await document.fonts.ready;
+      window.print();
+    });
+  }
+</script>
 
 <style>
   .resume-preview {
@@ -40,6 +72,7 @@ const { title } = Astro.props;
 
   .resume-controls {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
@@ -51,6 +84,58 @@ const { title } = Astro.props;
     padding-block: 0.75rem;
     color: var(--ink);
     text-decoration: underline;
+  }
+
+  .resume-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto;
+  }
+
+  .print-help {
+    position: relative;
+  }
+
+  .resume-print-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid var(--ink);
+    background: var(--accent);
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .resume-print-button[hidden] {
+    display: none;
+  }
+
+  .resume-print-button:hover {
+    background: var(--surface);
+  }
+
+  .print-hint {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1;
+    width: min(20rem, calc(100vw - 6rem));
+    padding: 0.75rem;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans), sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    visibility: hidden;
+  }
+
+  .print-help:hover .print-hint,
+  .print-help:focus-within .print-hint {
+    visibility: visible;
   }
 
   .resume-document {

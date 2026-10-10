@@ -9,8 +9,10 @@ import GitHub from './icons/GitHub.svg';
 
 interface Props {
   jobLimit?: number;
+  showTechnologies?: boolean;
+  splitFooter?: boolean;
 }
-const { jobLimit } = Astro.props;
+const { jobLimit, showTechnologies = true, splitFooter = false } = Astro.props;
 const allJobs = (await getCollection('resumeJobs')).sort(
   (a, b) =>
     b.data.start_month.localeCompare(a.data.start_month) ||
@@ -30,7 +32,7 @@ const education = (await getCollection('resumeEducation')).sort(
     <li>
       <a href="mailto:brian@watershed.technology">
         <Mail width={14} height={14} aria-hidden="true" focusable="false" />
-        brian@watershed.techology
+        brian@watershed.technology
       </a>
     </li>
     <li>
@@ -53,19 +55,26 @@ const education = (await getCollection('resumeEducation')).sort(
     </li>
   </ul>
 </header>
-<section aria-labelledby="experience-heading">
-  <h2 id="experience-heading">Experience</h2>
+<section
+  class:list={{ 'resume-experience-short': jobLimit !== undefined }}
+  aria-labelledby="experience-heading"
+>
+  <h2 id="experience-heading">
+    {jobLimit ? 'Selected Experience' : 'Experience'}
+  </h2>
   {jobs.map((job) => (
-    <ResumeJob job={job} />
+    <ResumeJob job={job} showTechnologies={showTechnologies} />
   ))}
 </section>
-<section class="resume-education" aria-labelledby="education-heading">
-  <h2 id="education-heading">Education</h2>
-  {education.map((entry) => (
-    <ResumeEducation education={entry} />
-  ))}
-</section>
-<ResumeInterests />
+<div class:list={['resume-footer', { 'resume-footer-split': splitFooter }]}>
+  <section class="resume-education" aria-labelledby="education-heading">
+    <h2 id="education-heading">Education</h2>
+    {education.map((entry) => (
+      <ResumeEducation education={entry} />
+    ))}
+  </section>
+  <ResumeInterests />
+</div>
 
 <style>
   .resume-header {
