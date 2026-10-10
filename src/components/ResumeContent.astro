@@ -1,0 +1,121 @@
+---
+import { getCollection } from 'astro:content';
+import ResumeJob from './ResumeJob.astro';
+import ResumeEducation from './ResumeEducation.astro';
+import ResumeInterests from './ResumeInterests.astro';
+import Mail from '@lucide/astro/icons/mail';
+import LinkedIn from './icons/LinkedIn.svg';
+import GitHub from './icons/GitHub.svg';
+
+interface Props {
+  jobLimit?: number;
+}
+const { jobLimit } = Astro.props;
+const allJobs = (await getCollection('resumeJobs')).sort(
+  (a, b) =>
+    b.data.start_month.localeCompare(a.data.start_month) ||
+    a.id.localeCompare(b.id)
+);
+const jobs = jobLimit === undefined ? allJobs : allJobs.slice(0, jobLimit);
+const education = (await getCollection('resumeEducation')).sort(
+  (a, b) =>
+    b.data.graduation_date.localeCompare(a.data.graduation_date) ||
+    a.id.localeCompare(b.id)
+);
+---
+
+<header class="resume-header">
+  <h1>Brian Bagdasarian</h1>
+  <ul class="resume-contact" aria-label="Contact profiles">
+    <li>
+      <a href="mailto:brian@watershed.technology">
+        <Mail width={14} height={14} aria-hidden="true" focusable="false" />
+        brian@watershed.techology
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/brian-bagdasarian-a8a497102">
+        <LinkedIn width={14} height={14} aria-hidden="true" focusable="false" />
+        linkedin.com/in/bbagdasarian
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/ahappypie">
+        <GitHub
+          width={14}
+          height={14}
+          fill="currentColor"
+          aria-hidden="true"
+          focusable="false"
+        />
+        github.com/ahappypie
+      </a>
+    </li>
+  </ul>
+</header>
+<section aria-labelledby="experience-heading">
+  <h2 id="experience-heading">Experience</h2>
+  {jobs.map((job) => (
+    <ResumeJob job={job} />
+  ))}
+</section>
+<section class="resume-education" aria-labelledby="education-heading">
+  <h2 id="education-heading">Education</h2>
+  {education.map((entry) => (
+    <ResumeEducation education={entry} />
+  ))}
+</section>
+<ResumeInterests />
+
+<style>
+  .resume-header {
+    padding-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(1.875rem, 5vw, 2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+
+  .resume-label {
+    margin-top: 0.75rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+  }
+
+  .resume-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem 1.5rem;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .resume-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding-block: 0.5rem;
+    color: var(--link);
+    text-decoration: underline;
+  }
+
+  .resume-contact :global(svg) {
+    flex-shrink: 0;
+  }
+
+  h2 {
+    padding-block: 0.5rem;
+    border-top: 2px solid var(--ink);
+    font-size: 1.125rem;
+    font-weight: 750;
+    letter-spacing: -0.025em;
+  }
+
+  .resume-education {
+    margin-top: 0.5rem;
+  }
+</style>

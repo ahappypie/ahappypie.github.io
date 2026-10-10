@@ -2,7 +2,6 @@
 import Main from '@layouts/Main.astro';
 import AcademicCard from '@components/AcademicCard.astro';
 import Timeline from '@components/Timeline.astro';
-import ExternalLink from '@lucide/astro/icons/external-link';
 
 const timelineData = [
   {
@@ -97,13 +96,8 @@ const timelineData = [
           Currently Pursuing MBA, Seeking Strategic Leadership Opportunity
         </p>
         <div>
-          <a
-            class="resume-download"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="/files/bbagdasarian_professional.pdf"
-          >
-            <ExternalLink class="stroke-2" /> Grab a PDF resume
+          <a class="resume-download" href="/resume">
+            View one-page resume
           </a>
           <a class="resume-download" href="/resume/full">
             View full resume
