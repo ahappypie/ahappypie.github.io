@@ -1,0 +1,120 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+
+interface Props {
+  education: CollectionEntry<'resumeEducation'>;
+}
+const { education } = Astro.props;
+const { school, location, graduation_date, degree } = education.data;
+const { Content } = await render(education);
+const graduation = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  year: 'numeric',
+  timeZone: 'UTC'
+}).format(new Date(graduation_date + '-01T00:00:00Z'));
+---
+
+<article class="education-entry" aria-labelledby={`education-${education.id}`}>
+  <header>
+    <div class="education-heading">
+      <h3 id={`education-${education.id}`}>{school.name}</h3>
+      {location && <p class="education-location">{location}</p>}
+    </div>
+    <div class="education-heading education-subheading">
+      {school.program && <p class="education-program">{school.program}</p>}
+      <p class="education-date">
+        <time datetime={graduation_date}>{graduation}</time>
+      </p>
+    </div>
+  </header>
+  <p class="education-degree">
+    {degree.kind}
+    {degree.description && ` | ${degree.description}`}
+    {degree.specializations?.map((specialization) => (
+      <span class="education-specialization">
+        {' | '}
+        {specialization.kind && `${specialization.kind}: `}
+        {specialization.name}
+      </span>
+    ))}
+  </p>
+  <div class="education-bullets">
+    <Content />
+  </div>
+</article>
+
+<style>
+  .education-entry {
+    padding-block: 1.25rem;
+    border-top: 1px solid var(--ink);
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .education-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25rem 1rem;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 750;
+    line-height: 1.35;
+  }
+
+  .education-location {
+    color: var(--muted);
+    font-size: 0.8125rem;
+  }
+
+  .education-subheading {
+    margin-top: 0.25rem;
+  }
+
+  .education-program {
+    font-weight: 650;
+  }
+
+  .education-date {
+    margin-left: auto;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .education-degree {
+    margin-top: 0.75rem;
+    font-weight: 650;
+  }
+
+  .education-specialization {
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .education-bullets {
+    margin-top: 0.75rem;
+  }
+
+  .education-bullets :global(ul) {
+    padding-left: 1.15rem;
+    list-style: square;
+  }
+
+  .education-bullets :global(li + li) {
+    margin-top: 0.5rem;
+  }
+
+  .education-bullets :global(em) {
+    font-style: normal;
+    font-weight: 650;
+  }
+
+  .education-bullets :global(a) {
+    color: var(--link);
+    text-decoration: underline;
+  }
+</style>

@@ -3,6 +3,15 @@
 // import SomeOtherTags from "./SomeOtherTags.astro";
 
 import { Font } from 'astro:assets';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Brian Bagdasarian',
+  description = 'Welcome to my new Astro site!'
+} = Astro.props;
 ---
 
 <!-- Apply an explicit preference before paint; otherwise CSS follows the system. -->
@@ -21,8 +30,8 @@ import { Font } from 'astro:assets';
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Title and Meta -->
-<title>Brian Bagdasarian</title>
-<meta name="description" content="Welcome to my new Astro site!" />
+<title>{title}</title>
+<meta name="description" content={description} />
 <!-- Fonts -->
 <Font cssVariable="--font-inter" preload />
 

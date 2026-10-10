@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import Resume from '../../layouts/Resume.astro';
+import ResumeJob from '../../components/ResumeJob.astro';
+import ResumeEducation from '../../components/ResumeEducation.astro';
+
+import { AtSign } from '@lucide/astro';
+
+const jobs = (await getCollection('resumeJobs')).sort(
+  (a, b) =>
+    b.data.start_month.localeCompare(a.data.start_month) ||
+    a.id.localeCompare(b.id)
+);
+const education = (await getCollection('resumeEducation')).sort(
+  (a, b) =>
+    b.data.graduation_date.localeCompare(a.data.graduation_date) ||
+    a.id.localeCompare(b.id)
+);
+---
+
+<Resume title="Full Resume — Brian Bagdasarian">
+  <header class="resume-header">
+    <h1>Brian Bagdasarian</h1>
+    <ul class="resume-contact" aria-label="Contact profiles">
+      <li>
+        <a href="mailto:brian@watershed.technology">brian@watershed.techology</a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/brian-bagdasarian-a8a497102">
+          linkedin.com/in/bbagdasarian
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/ahappypie">github.com/ahappypie</a>
+      </li>
+    </ul>
+  </header>
+  <section aria-labelledby="experience-heading">
+    <h2 id="experience-heading">Experience</h2>
+    {jobs.map((job) => (
+      <ResumeJob job={job} />
+    ))}
+  </section>
+  <section class="resume-education" aria-labelledby="education-heading">
+    <h2 id="education-heading">Education</h2>
+    {education.map((entry) => (
+      <ResumeEducation education={entry} />
+    ))}
+  </section>
+</Resume>
+
+<style>
+  .resume-header {
+    padding-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(1.875rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+
+  .resume-label {
+    margin-top: 0.75rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+  }
+
+  .resume-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem 1.5rem;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+  }
+
+  .resume-contact a {
+    display: inline-block;
+    padding-block: 0.5rem;
+    color: var(--link);
+    text-decoration: underline;
+  }
+
+  h2 {
+    padding-block: 0.75rem;
+    border-top: 3px solid var(--ink);
+    font-size: 1.25rem;
+    font-weight: 750;
+    letter-spacing: -0.025em;
+  }
+
+  .resume-education {
+    margin-top: 1rem;
+  }
+</style>
