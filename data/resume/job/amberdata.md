@@ -38,6 +38,9 @@ details:
     print_hide: false
     kind: all
   - bullet: "Created roadmap for next-generation data delivery platform, designed to scale from petabytes to tens of petabytes, by working with product, sales, customer service and other engineers"
+    print_hide: true
+    kind: tech
+  - bullet: "Created roadmap for next-generation data delivery platform, designed to scale from petabytes to tens of petabytes, working cross-functionally with product, sales, customer service and other engineers"
     print_hide: false
-    kind: all
+    kind: business
 ---

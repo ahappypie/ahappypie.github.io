@@ -24,7 +24,7 @@ details:
     print_hide: false
     kind: all
   - bullet: "Decided key technical tradeoﬀs, replacing complex but extensible tooling with lightweight, language-native tools to maximize development velocity and guarantee deterministic deployments"
-    print_hide: false
+    print_hide: true
     kind: tech
   - bullet: "Established product quality expectations for future engineers through a combination of documentation, runbooks and automated quality checks"
     print_hide: false

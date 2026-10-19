@@ -168,21 +168,15 @@
   html.resume-page .resume-document .job-bullets {
     margin-top: 3pt;
     font-size: 10pt;
-    line-height: 1.15;
+  }
+
+  html.resume-page .resume-document .job-bullets,
+  html.resume-page .resume-document .education-bullets {
+    line-height: 1.25;
   }
 
   html.resume-page .resume-document .resume-experience-short .job-bullets {
     font-size: 9pt;
-    line-height: 1.25;
-  }
-
-  html.resume-page
-    .resume-document
-    .resume-experience-short
-    .job-bullets
-    li
-    + li {
-    margin-top: 3pt;
   }
 
   html.resume-page .resume-document .job-bullets ul,
@@ -193,7 +187,7 @@
 
   html.resume-page .resume-document .job-bullets li + li,
   html.resume-page .resume-document .education-bullets li + li {
-    margin-top: 1pt;
+    margin-top: 3pt;
   }
 
   html.resume-page .resume-document li,
@@ -231,9 +225,7 @@
   }
 
   html.resume-page .resume-document .interests-details > div {
-    display: grid;
-    grid-template-columns: 52pt minmax(0, 1fr);
-    gap: 6pt;
+    display: block;
   }
 
   html.resume-page .resume-document .interests-details > div + div {
@@ -244,60 +236,22 @@
     margin-bottom: 0;
   }
 
-  /* Short resume only: UCLA left, NYU and interests stacked right. */
-  html.resume-page .resume-document .resume-footer-split {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 14pt;
-    align-items: start;
-    margin-top: 3pt;
-  }
-
-  html.resume-page .resume-document .resume-footer-split .resume-education {
-    display: contents;
-  }
-
-  html.resume-page .resume-document .resume-footer-split #education-heading {
-    grid-column: 1 / -1;
-    grid-row: 1;
-  }
-
-  html.resume-page
-    .resume-document
-    .resume-footer-split
-    .education-entry:first-of-type {
-    grid-column: 1;
-    grid-row: 2 / span 2;
-  }
-
-  html.resume-page
-    .resume-document
-    .resume-footer-split
-    .education-entry:nth-of-type(2) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  html.resume-page .resume-document .resume-footer-split .resume-interests {
-    grid-column: 2;
-    grid-row: 3;
-  }
-
-  html.resume-page .resume-document .resume-footer-split,
-  html.resume-page .resume-document .resume-footer-split .education-entry,
-  html.resume-page .resume-document .resume-footer-split h2,
-  html.resume-page .resume-document .resume-footer-split h3,
-  html.resume-page .resume-document .resume-footer-split .education-date,
-  html.resume-page .resume-document .resume-footer-split .education-location {
+  /* Preserve the short resume's compact type without changing reading order. */
+  html.resume-page .resume-document .resume-footer-short,
+  html.resume-page .resume-document .resume-footer-short .education-entry,
+  html.resume-page .resume-document .resume-footer-short h2,
+  html.resume-page .resume-document .resume-footer-short h3,
+  html.resume-page .resume-document .resume-footer-short .education-date,
+  html.resume-page .resume-document .resume-footer-short .education-location {
     font-size: 9pt;
   }
 
-  html.resume-page .resume-document .resume-footer-split .education-heading {
+  html.resume-page .resume-document .resume-footer-short .education-heading {
     gap: 1pt 6pt;
   }
 
-  html.resume-page .resume-document .resume-footer-split .education-degree,
-  html.resume-page .resume-document .resume-footer-split .education-bullets {
+  html.resume-page .resume-document .resume-footer-short .education-degree,
+  html.resume-page .resume-document .resume-footer-short .education-bullets {
     margin-top: 2pt;
   }
 }

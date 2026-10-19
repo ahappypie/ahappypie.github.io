@@ -11,15 +11,9 @@ import GitHub from './icons/GitHub.svg';
 interface Props {
   jobLimit?: number;
   showTechnologies?: boolean;
-  splitFooter?: boolean;
   audience?: ResumeAudience;
 }
-const {
-  jobLimit,
-  showTechnologies = true,
-  splitFooter = false,
-  audience = 'all'
-} = Astro.props;
+const { jobLimit, showTechnologies = true, audience = 'all' } = Astro.props;
 const allJobs = (await getCollection('resumeJobs')).sort(
   (a, b) =>
     b.data.start_month.localeCompare(a.data.start_month) ||
@@ -72,10 +66,19 @@ const education = (await getCollection('resumeEducation')).sort(
     {jobLimit ? 'Selected Experience' : 'Experience'}
   </h2>
   {jobs.map((job) => (
-    <ResumeJob job={job} showTechnologies={showTechnologies} />
+    <ResumeJob
+      job={job}
+      showTechnologies={showTechnologies}
+      respectPrintHide={jobLimit !== undefined}
+    />
   ))}
 </section>
-<div class:list={['resume-footer', { 'resume-footer-split': splitFooter }]}>
+<div
+  class:list={[
+    'resume-footer',
+    { 'resume-footer-short': jobLimit !== undefined }
+  ]}
+>
   <section class="resume-education" aria-labelledby="education-heading">
     <h2 id="education-heading">Education</h2>
     {education.map((entry) => (

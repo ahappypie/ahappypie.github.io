@@ -50,11 +50,14 @@ details:
     print_hide: false
     kind: all
   - bullet: "Designed and implemented custom infrastructure as code framework with Pulumi and TypeScript to satisfy the need for quick, precise rollouts of foundational software components"
+    print_hide: true
+    kind: tech
+  - bullet: "Supported Product and Marketing teams using real time customer data on Databricks during Cosm's multi-stage launch at less than $100 per month, culminating in sold-out launch events attended by thousands of customers"
     print_hide: false
     kind: tech
-  - bullet: "Supported Product and Marketing teams using real time customer data on Databricks during Cosm's multi-stage launch at less than $100 per month, culminating in sold-out launch events attended by thousands of customers with extreme efficiency"
+  - bullet: "Identified valuable customer data for Product and Marketing teams, using real time quality checks on Databricks to drive feature development and sold-out launch events attended by thousands of customers"
     print_hide: false
-    kind: tech
+    kind: business
   - bullet: "Drove CPRA & GDPR privacy compliance across website, mobile and backend, leading engagement with our external partners, including Databricks, Transcend & PostHog"
     print_hide: false
     kind: tech
