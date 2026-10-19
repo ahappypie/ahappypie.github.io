@@ -25,8 +25,11 @@ technologies:
   - "Snowflake"
   - "MariaDB + MyRocks"
   - "S3"
+details:
+  - bullet: "Designed and built a shared services data platform, greatly increasing the speed at which new acquisitions could be onboarded, a critical metric of restoring companies to profitability"
+    print_hide: true
+    kind: all
+  - bullet: "Planned and executed retail software platform migration across 800+ locations, including point of sale and employee authentication, resulting in an 80% decrease in day to day management tasks compared to the previous solution"
+    print_hide: true
+    kind: all
 ---
-
-- Designed and built a shared services data platform, greatly increasing the speed at which new acquisitions could be onboarded, a critical metric of restoring companies to profitability
-- Planned and executed retail software platform migration across 800+ locations, including point of sale and employee authentication, resulting in an 80% decrease in day to day management tasks compared to the previous solution
-

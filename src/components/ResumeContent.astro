@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { filterResumeJobs, type ResumeAudience } from '../lib/resume-audiences';
 import ResumeJob from './ResumeJob.astro';
 import ResumeEducation from './ResumeEducation.astro';
 import ResumeInterests from './ResumeInterests.astro';
@@ -11,14 +12,22 @@ interface Props {
   jobLimit?: number;
   showTechnologies?: boolean;
   splitFooter?: boolean;
+  audience?: ResumeAudience;
 }
-const { jobLimit, showTechnologies = true, splitFooter = false } = Astro.props;
+const {
+  jobLimit,
+  showTechnologies = true,
+  splitFooter = false,
+  audience = 'all'
+} = Astro.props;
 const allJobs = (await getCollection('resumeJobs')).sort(
   (a, b) =>
     b.data.start_month.localeCompare(a.data.start_month) ||
     a.id.localeCompare(b.id)
 );
-const jobs = jobLimit === undefined ? allJobs : allJobs.slice(0, jobLimit);
+const selectedJobs =
+  jobLimit === undefined ? allJobs : allJobs.slice(0, jobLimit);
+const jobs = filterResumeJobs(selectedJobs, audience);
 const education = (await getCollection('resumeEducation')).sort(
   (a, b) =>
     b.data.graduation_date.localeCompare(a.data.graduation_date) ||

@@ -36,13 +36,26 @@ technologies:
   - "MongoDB"
   - "Tailscale"
   - "Transcend"
+details:
+  - bullet: "Managed Data team as product and engineering manager, planning and delivering a multi-year roadmap, creating insight into Cosm’s first party ticketing platform and third-party data, building a culture of data-driven decision making"
+    print_hide: false
+    kind: all
+  - bullet: "Mentored engineers in Cosm's internship program, training and converting interns to full-time engineers at the conclusion of the program, creating standard procedures for a robust engineering talent pipeline"
+    print_hide: false
+    kind: all
+  - bullet: "Led cross-functional strategic effort across 6 departments and 30+ people to utilize our unified data platform of transaction, operational and behavioral data in everyday decisions to assist growing Cosm Venues to a $100m business"
+    print_hide: false
+    kind: all
+  - bullet: "Founding member of Cosm's Platform Team, dedicated to improving developer experience, reliability and performance of core systems, ensuring fast iteration cycles while growing the engineering team from 10 to 75+ members"
+    print_hide: false
+    kind: all
+  - bullet: "Designed and implemented custom infrastructure as code framework with Pulumi and TypeScript to satisfy the need for quick, precise rollouts of foundational software components"
+    print_hide: false
+    kind: tech
+  - bullet: "Supported Product and Marketing teams using real time customer data on Databricks during Cosm's multi-stage launch at less than $100 per month, culminating in sold-out launch events attended by thousands of customers with extreme efficiency"
+    print_hide: false
+    kind: tech
+  - bullet: "Drove CPRA & GDPR privacy compliance across website, mobile and backend, leading engagement with our external partners, including Databricks, Transcend & PostHog"
+    print_hide: false
+    kind: tech
 ---
-
-- Managed Data team as product and engineering manager, planning and delivering a multi-year roadmap, creating insight into Cosm’s first party ticketing platform and third-party data, building a culture of data-driven decision making
-- Mentored engineers in Cosm's internship program, training and converting interns to full-time engineers at the conclusion of the program, creating standard procedures for a robust engineering talent pipeline
-- Led cross-functional strategic effort across 6 departments and 30+ people to utilize our unified data platform of transaction, operational and behavioral data in everyday decisions to assist growing Cosm Venues to a $100m business
-- Founding member of Cosm's Platform Team, dedicated to improving developer experience, reliability and performance of core systems, ensuring fast iteration cycles while growing the engineering team from 10 to 75+ members
-- Designed and implemented custom infrastructure as code framework with Pulumi and TypeScript to satisfy the need for quick, precise rollouts of foundational software components
-- Supported Product and Marketing teams using real time customer data on Databricks during Cosm’s multi-stage launch at less than $100 per month, culminating in sold-out launch events attended by thousands of customers with extreme efficiency
-- Drove CPRA & GDPR privacy compliance across website, mobile and backend, leading engagement with our external partners, including Databricks, Transcend & PostHog
-

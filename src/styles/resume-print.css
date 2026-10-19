@@ -1,5 +1,9 @@
 /* Imported only by the resume layout; screen styles remain unchanged. */
 @media print {
+  html.resume-page .resume-document [data-print-hide='true'] {
+    display: none !important;
+  }
+
   @page {
     size: letter portrait;
     margin: 0.4in;

@@ -1,5 +1,5 @@
 ---
-import { render, type CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   job: CollectionEntry<'resumeJobs'>;
@@ -7,8 +7,8 @@ interface Props {
 }
 const { job, showTechnologies = true } = Astro.props;
 const { company, position, roles, work, start_month, end_month } = job.data;
-const technologies = job.data.technologies;
-const { Content } = await render(job);
+const technologies = job.data.technologies ?? [];
+const details = job.data.details ?? [];
 const dateFormatter = new Intl.DateTimeFormat('en-US', {
   month: 'short',
   year: 'numeric',
@@ -52,9 +52,20 @@ const workDetails = [work.location, work.arrangement].filter(Boolean);
       </p>
     </div>
   </header>
-  <div class="job-bullets">
-    <Content />
-  </div>
+  {details.length > 0 && (
+    <div class="job-bullets">
+      <ul>
+        {details.map((detail) => (
+          <li
+            data-kind={detail.kind}
+            data-print-hide={detail.print_hide ? 'true' : undefined}
+          >
+            {detail.bullet}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
   {showTechnologies && technologies.length > 0 && (
     <p class="job-technologies">
       <strong>Key technologies:</strong> {technologies.join(', ')}

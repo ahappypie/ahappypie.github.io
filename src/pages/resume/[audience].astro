@@ -1,0 +1,28 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from 'astro';
+import Resume from '../../layouts/Resume.astro';
+import ResumeContent from '../../components/ResumeContent.astro';
+
+export const getStaticPaths = (() => [
+  {
+    params: { audience: 'tech' },
+    props: { audience: 'tech' as const, label: 'Technical' }
+  },
+  {
+    params: { audience: 'business' },
+    props: { audience: 'business' as const, label: 'Business' }
+  }
+]) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { audience, label } = Astro.props;
+---
+
+<Resume title={`${label} Resume - Brian Bagdasarian`} audience={audience}>
+  <ResumeContent
+    jobLimit={3}
+    showTechnologies={false}
+    splitFooter
+    audience={audience}
+  />
+</Resume>

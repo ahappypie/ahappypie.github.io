@@ -26,10 +26,9 @@ technologies:
   - "Snowflake"
   - "S3"
   - "Microsoft SQL Server"
+details:
+  - bullet: "Identified need for streaming data architecture to reduce latency by analyzing product SLA and discussing customer needs with product and support, reduced overall cost 20% ($200k+ annually), even with 100% increase in data volume"
+  - bullet: "Boosted machine learning and artificial intelligence training performance 40% by optimizing data science workflow for Databricks platform, collaborating with practitioners to reduce time to market for AI products by 50%"
+  - bullet: "Optimized queries on 140+ TB data warehouse, increasing typical query performance 20% and reducing cost 40%, saving $400k annually"
+  - bullet: "Automated internal billing workflow, reducing time to invoice customers from 5 days to hours"
 ---
-
-- Identified need for streaming data architecture to reduce latency by analyzing product SLA and discussing customer needs with product and support, reduced overall cost 20% ($200k+ annually), even with 100% increase in data volume
-- Boosted machine learning and artificial intelligence training performance 40% by optimizing data science workflow for Databricks platform, collaborating with practitioners to reduce time to market for AI products by 50%
-- Optimized queries on 140+ TB data warehouse, increasing typical query performance 20% and reducing cost 40%, saving $400k annually
-- Automated internal billing workflow, reducing time to invoice customers from 5 days to hours
-

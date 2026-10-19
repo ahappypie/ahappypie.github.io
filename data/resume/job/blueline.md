@@ -15,7 +15,11 @@ technologies:
   - "MySQL"
   - "Jenkins"
   - "TestFlight"
+details:
+  - bullet: "Created iOS app deployment pipeline using Git, Jenkins, and TestFlight, increasing the pace of the QA feedback loop from days to hours"
+    print_hide: true
+    kind: all
+  - bullet: "Developed microservice utilizing Scala, Akka and MySQL for collection and analysis of Mailgun email campaign response data, giving the business insight into new user acquisition costs"
+    print_hide: true
+    kind: all
 ---
-
-- Created iOS app deployment pipeline using Git, Jenkins, and TestFlight, increasing the pace of the QA feedback loop from days to hours
-- Developed microservice utilizing Scala, Akka and MySQL for collection and analysis of Mailgun email campaign response data, giving the business insight into new user acquisition costs

@@ -198,7 +198,9 @@ h3 {
 
 /* Raised mechanical keys: shared by buttons and button-shaped links. */
 @media screen {
-  :is(button, .notebook-nav a, .resume-download):not(:disabled) {
+  :is(button, .notebook-nav a, .resume-audiences a, .resume-download):not(
+    :disabled
+  ) {
     box-shadow: 3px 3px 0 var(--ink);
     transform: translate(0, 0);
     transition:
@@ -206,21 +208,27 @@ h3 {
       box-shadow 100ms ease-out;
   }
 
-  :is(button, .notebook-nav a, .resume-download):not(:disabled):active {
+  :is(button, .notebook-nav a, .resume-audiences a, .resume-download):not(
+      :disabled
+    ):active {
     box-shadow: 0 0 0 var(--ink);
     transform: translate(3px, 3px);
   }
 }
 
 @media screen and (hover: hover) {
-  :is(button, .notebook-nav a, .resume-download):not(:disabled):hover {
+  :is(button, .notebook-nav a, .resume-audiences a, .resume-download):not(
+      :disabled
+    ):hover {
     box-shadow: 0 0 0 var(--ink);
     transform: translate(3px, 3px);
   }
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  :is(button, .notebook-nav a, .resume-download):not(:disabled) {
+  :is(button, .notebook-nav a, .resume-audiences a, .resume-download):not(
+    :disabled
+  ) {
     transition: none;
   }
 }
