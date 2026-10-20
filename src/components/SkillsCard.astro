@@ -14,7 +14,14 @@ const formatMonth = (value: string) =>
   formatter.format(new Date(value + '-01T00:00:00Z'));
 ---
 
-<li class="skills-card" id={`skill-${skill.id}`}>
+<li
+  class="skills-card"
+  id={`skill-${skill.id}`}
+  data-skill-card
+  data-category={skill.category}
+  data-subcategory={skill.subcategory}
+  data-last-use={skill.last_use}
+>
   <header>
     <h3>{skill.name}</h3>
     <span class="skill-environment">{skill.environment}</span>

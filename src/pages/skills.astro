@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Main from '../layouts/Main.astro';
 import SkillsCard from '../components/SkillsCard.astro';
 import { getResumeSkills } from '../lib/resume-skills';
+import { getSkillCategories } from '../lib/skill-filters';
 
 const [jobs, skillEntries] = await Promise.all([
   getCollection('resumeJobs'),
@@ -11,6 +12,7 @@ const [jobs, skillEntries] = await Promise.all([
 const skills = getResumeSkills(skillEntries, jobs);
 const featuredSkills = skills.filter((skill) => skill.featured);
 const otherSkills = skills.filter((skill) => !skill.featured);
+const categories = getSkillCategories(skills);
 ---
 
 <Main
@@ -18,14 +20,53 @@ const otherSkills = skills.filter((skill) => !skill.featured);
   description="Skills & technologies used across professional experience"
 >
   <header class="skills-intro">
-    <h1 class="page-title">Skill Cards</h1>
-    <p>Skills and technologies, when and where I used them</p>
-    <p class="skills-summary">{skills.length} skills</p>
+    <h1 class="page-title">Skill & Tech Cards</h1>
   </header>
+  <div class="skills-filters" id="skills-filters" hidden>
+    <label class="category-filter">
+      <span>Category / subcategory</span>
+      <select id="skill-category">
+        <option value="">All categories</option>
+        {categories.map(({ category, subcategories }) => (
+          <>
+            <option value={JSON.stringify([category])} data-category={category}>
+              {category}
+            </option>
+            {subcategories.map((subcategory) => (
+              <option
+                value={JSON.stringify([category, subcategory])}
+                data-category={category}
+                data-subcategory={subcategory}
+                aria-label={`${category} (${subcategory})`}
+              >{`\u00a0\u00a0↳ ${subcategory}`}</option>
+            ))}
+          </>
+        ))}
+      </select>
+    </label>
+    <div class="skills-status">
+      <label class="active-filter">
+        <input type="checkbox" role="switch" id="skill-active" />
+        <span>Active only</span>
+      </label>
+      <span
+        class="skills-summary"
+        id="skills-count"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {skills.length} skills
+      </span>
+    </div>
+  </div>
+  <p id="skills-no-results" hidden>
+    No skills match these filters.
+  </p>
   {featuredSkills.length > 0 && (
     <section class="skills-section" aria-labelledby="featured-skills-heading">
       <h2 id="featured-skills-heading" class="section-title">
-        Featured skills
+        Featured
       </h2>
       <ul class="skills-grid" aria-label="Featured skills, alphabetically">
         {featuredSkills.map((skill) => (
@@ -37,7 +78,7 @@ const otherSkills = skills.filter((skill) => !skill.featured);
   {otherSkills.length > 0 && (
     <section class="skills-section" aria-labelledby="other-skills-heading">
       <h2 id="other-skills-heading" class="section-title">
-        {featuredSkills.length > 0 ? 'More skills' : 'All skills'}
+        {featuredSkills.length > 0 ? 'More' : 'All'}
       </h2>
       <ul class="skills-grid" aria-label="Other skills, alphabetically">
         {otherSkills.map((skill) => (
@@ -49,7 +90,161 @@ const otherSkills = skills.filter((skill) => !skill.featured);
   {skills.length === 0 && <p>No skills have been listed yet.</p>}
 </Main>
 
+<script>
+  import { matchesSkillFilters } from '../lib/skill-filters';
+
+  const controls = document.querySelector<HTMLElement>('#skills-filters');
+  const category = document.querySelector<HTMLSelectElement>('#skill-category');
+  const active = document.querySelector<HTMLInputElement>('#skill-active');
+  const count = document.querySelector<HTMLElement>('#skills-count');
+  const empty = document.querySelector<HTMLElement>('#skills-no-results');
+
+  if (controls && category && active && count && empty) {
+    const cards = [
+      ...document.querySelectorAll<HTMLElement>('[data-skill-card]')
+    ];
+    const sections = [
+      ...document.querySelectorAll<HTMLElement>('.skills-section')
+    ];
+
+    const update = () => {
+      const selected = category.selectedOptions[0];
+      const filters = {
+        category: selected?.dataset.category,
+        subcategory: selected?.dataset.subcategory,
+        activeOnly: active.checked
+      };
+      let visible = 0;
+      let selectionTotal = 0;
+      for (const card of cards) {
+        const skill = {
+          category: card.dataset.category ?? '',
+          subcategory: card.dataset.subcategory,
+          last_use: card.dataset.lastUse
+        };
+        if (matchesSkillFilters(skill, { ...filters, activeOnly: false })) {
+          selectionTotal++;
+        }
+        card.hidden = !matchesSkillFilters(skill, filters);
+        if (!card.hidden) visible++;
+      }
+      for (const section of sections) {
+        section.hidden = !section.querySelector(
+          '[data-skill-card]:not([hidden])'
+        );
+      }
+      count.textContent = `${visible} of ${selectionTotal}`;
+      empty.hidden = visible !== 0 || cards.length === 0;
+    };
+
+    category.addEventListener('change', update);
+    active.addEventListener('change', update);
+    // Respect browser-restored form values on reload/back navigation.
+    window.addEventListener('pageshow', update);
+    update();
+    controls.hidden = false;
+  }
+</script>
+
 <style>
+  .skills-filters:not([hidden]) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 1rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .category-filter {
+    display: grid;
+    gap: 0.5rem;
+    max-width: 100%;
+    font-size: 0.875rem;
+    font-weight: 650;
+  }
+
+  select {
+    min-height: 44px;
+    max-width: 100%;
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    border: 2px solid var(--ink);
+    border-radius: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: inherit;
+  }
+
+  .skills-status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .active-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+
+  #skill-active {
+    appearance: none;
+    flex-shrink: 0;
+    width: 2.75rem;
+    height: 1.5rem;
+    margin: 0;
+    padding: 2px;
+    border: 2px solid var(--ink);
+    border-radius: 0;
+    background: var(--paper);
+    cursor: pointer;
+    transition: background-color 180ms ease;
+  }
+
+  #skill-active::before {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: var(--ink);
+    transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  #skill-active:checked {
+    background: var(--accent);
+  }
+
+  #skill-active:checked::before {
+    transform: translateX(1.25rem);
+  }
+
+  #skill-active:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #skill-active,
+    #skill-active::before {
+      transition: none;
+    }
+  }
+
+  @media (forced-colors: active) {
+    #skill-active::before {
+      background: ButtonText;
+      forced-color-adjust: none;
+    }
+  }
+
+  :global([data-skill-card][hidden]),
+  .skills-section[hidden] {
+    display: none !important;
+  }
+
   .skills-intro {
     margin-bottom: 2rem;
   }
@@ -59,7 +254,6 @@ const otherSkills = skills.filter((skill) => !skill.featured);
   }
 
   .skills-summary {
-    margin-top: 1rem;
     padding: 0.75rem 1rem;
     border-left: 4px solid var(--ink);
     background: var(--accent);
