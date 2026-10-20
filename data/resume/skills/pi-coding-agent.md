@@ -1,6 +1,6 @@
 ---
 name: "pi-coding-agent"
-featured: false
+featured: true
 category: "AI"
 subcategory: "Coding Agent"
 first_use: "2026-06"
