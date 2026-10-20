@@ -23,7 +23,7 @@ technologies:
   - "AWS"
   - "Kubernetes"
   - "Cilium"
-  - "Flux"
+  - "FluxCD"
   - "Pulumi"
   - "Redpanda"
   - "Strimzi"

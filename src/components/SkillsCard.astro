@@ -1,0 +1,150 @@
+---
+import type { ResumeSkill } from '../lib/resume-skills';
+
+interface Props {
+  skill: ResumeSkill;
+}
+const { skill } = Astro.props;
+const formatter = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  year: 'numeric',
+  timeZone: 'UTC'
+});
+const formatMonth = (value: string) =>
+  formatter.format(new Date(value + '-01T00:00:00Z'));
+---
+
+<li class="skills-card" id={`skill-${skill.id}`}>
+  <header>
+    <h3>{skill.name}</h3>
+    <span class="skill-environment">{skill.environment}</span>
+  </header>
+  <dl class="skill-metadata">
+    <div>
+      <dt>Category</dt>
+      <dd>
+        {skill.category}
+        {skill.subcategory && ` (${skill.subcategory})`}
+      </dd>
+    </div>
+    <div>
+      <dt>Used</dt>
+      <dd>
+        <time datetime={skill.first_use}>{formatMonth(skill.first_use)}</time>
+        {' - '}
+        {skill.last_use ? (
+          <time datetime={skill.last_use}>{formatMonth(skill.last_use)}</time>
+        ) : (
+          <span>Present</span>
+        )}
+      </dd>
+    </div>
+    {skill.replacement && (
+      <div>
+        <dt>Superseded by</dt>
+        <dd>
+          <a href={`#skill-${skill.replacement.id}`}>
+            {skill.replacement.name}
+          </a>
+        </dd>
+      </div>
+    )}
+  </dl>
+  {skill.companies.length > 0 && (
+    <section aria-label="Companies">
+      <h4>Companies</h4>
+      <ul class="skill-companies">
+        {skill.companies.map((company) => (
+          <li>{company}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+  {skill.additional_experience && skill.additional_experience.length > 0 && (
+    <section aria-label="Additional experience">
+      <h4>Additional experience</h4>
+      <ul class="additional-experience">
+        {skill.additional_experience.map((experience) => (
+          <li>{experience}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+</li>
+
+<style>
+  .skills-card {
+    min-width: 0;
+    padding: 1.25rem;
+    border: 2px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--ink);
+    overflow-wrap: anywhere;
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.25rem 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 750;
+  }
+
+  .skill-environment {
+    padding: 0.1rem 0.35rem;
+    border: 1px solid var(--ink);
+    background: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .skill-metadata {
+    margin-top: 0.75rem;
+    font-size: 0.8125rem;
+  }
+
+  .skill-metadata > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+  }
+
+  dt {
+    color: var(--muted);
+  }
+
+  section {
+    margin-top: 1rem;
+  }
+
+  h4 {
+    margin-bottom: 0.4rem;
+    font-size: 0.8125rem;
+    font-weight: 650;
+  }
+
+  .skill-companies,
+  .additional-experience {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .skill-companies li,
+  .additional-experience li {
+    padding: 0.2rem 0.4rem;
+    border: 1px solid var(--ink);
+    font-size: 0.75rem;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration: underline;
+  }
+</style>

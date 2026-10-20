@@ -20,7 +20,7 @@ technologies:
   - "SQL"
   - "AWS"
   - "Kubernetes"
-  - "Flux"
+  - "FluxCD"
   - "Pulumi"
   - "Postgres"
   - "Debezium"

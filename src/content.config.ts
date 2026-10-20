@@ -1,4 +1,4 @@
-import { defineCollection } from 'astro:content';
+import { defineCollection, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
@@ -77,4 +77,31 @@ const resumeEducation = defineCollection({
   })
 });
 
-export const collections = { resumeJobs, resumeEducation };
+const resumeSkills = defineCollection({
+  loader: glob({
+    base: './data/resume/skills',
+    pattern: ['**/*.md', '!README.md']
+  }),
+  schema: z
+    .object({
+      name: z.string().trim().min(1),
+      category: z.string().trim().min(1),
+      subcategory: z.string().trim().min(1).optional(),
+      featured: z
+        .boolean()
+        .default(false)
+        .describe('Show this skill in the featured section'),
+      first_use: yearMonth,
+      last_use: yearMonth.optional(),
+      superseded_by: reference('resumeSkills').optional(),
+      environment: z.enum(['production', 'experimental']).default('production'),
+      additional_experience: z.array(z.string().trim().min(1)).optional()
+    })
+    .refine(
+      ({ first_use, last_use }) =>
+        last_use === undefined || last_use >= first_use,
+      { message: 'Last use must not precede first use', path: ['last_use'] }
+    )
+});
+
+export const collections = { resumeJobs, resumeEducation, resumeSkills };

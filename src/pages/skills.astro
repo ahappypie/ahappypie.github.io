@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import Main from '../layouts/Main.astro';
+import SkillsCard from '../components/SkillsCard.astro';
+import { getResumeSkills } from '../lib/resume-skills';
+
+const [jobs, skillEntries] = await Promise.all([
+  getCollection('resumeJobs'),
+  getCollection('resumeSkills')
+]);
+const skills = getResumeSkills(skillEntries, jobs);
+const featuredSkills = skills.filter((skill) => skill.featured);
+const otherSkills = skills.filter((skill) => !skill.featured);
+---
+
+<Main
+  title="Skills - Brian Bagdasarian"
+  description="Skills & technologies used across professional experience"
+>
+  <header class="skills-intro">
+    <h1 class="page-title">Skill Cards</h1>
+    <p>Skills and technologies, when and where I used them</p>
+    <p class="skills-summary">{skills.length} skills</p>
+  </header>
+  {featuredSkills.length > 0 && (
+    <section class="skills-section" aria-labelledby="featured-skills-heading">
+      <h2 id="featured-skills-heading" class="section-title">
+        Featured skills
+      </h2>
+      <ul class="skills-grid" aria-label="Featured skills, alphabetically">
+        {featuredSkills.map((skill) => (
+          <SkillsCard skill={skill} />
+        ))}
+      </ul>
+    </section>
+  )}
+  {otherSkills.length > 0 && (
+    <section class="skills-section" aria-labelledby="other-skills-heading">
+      <h2 id="other-skills-heading" class="section-title">
+        {featuredSkills.length > 0 ? 'More skills' : 'All skills'}
+      </h2>
+      <ul class="skills-grid" aria-label="Other skills, alphabetically">
+        {otherSkills.map((skill) => (
+          <SkillsCard skill={skill} />
+        ))}
+      </ul>
+    </section>
+  )}
+  {skills.length === 0 && <p>No skills have been listed yet.</p>}
+</Main>
+
+<style>
+  .skills-intro {
+    margin-bottom: 2rem;
+  }
+
+  .skills-intro > p {
+    max-width: 65ch;
+  }
+
+  .skills-summary {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--ink);
+    background: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+
+  .skills-section + .skills-section {
+    margin-top: 2.5rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .skills-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

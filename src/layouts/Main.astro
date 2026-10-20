@@ -3,6 +3,12 @@ import Head from '../components/Head.astro';
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -10,7 +16,7 @@ import Footer from '../components/Footer.astro';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <Head />
+    <Head title={title} description={description} />
   </head>
   <body>
     <div class="notebook">
